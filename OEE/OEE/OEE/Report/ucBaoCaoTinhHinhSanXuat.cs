@@ -9,6 +9,8 @@ using System.Drawing;
 using System.IO;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid;
+using DevExpress.Utils;
+
 namespace OEE
 {
     public partial class ucBaoCaoTinhHinhSanXuat : DevExpress.XtraEditors.XtraUserControl
@@ -37,6 +39,9 @@ namespace OEE
                 if (iLoad == true)
                 {
                     Modules.ObjSystems.MLoadXtraGrid(grdTinhHinhSanXuat, grvTinhHinhSanXuat, dtmp, true, true, true, true, this.Name);
+                    grvTinhHinhSanXuat.Columns["ActualQuantity"].DisplayFormat.FormatType = FormatType.Numeric;
+                    grvTinhHinhSanXuat.Columns["ActualQuantity"].DisplayFormat.FormatString = Commons.Modules.sSoLeDG;
+
                     grvTinhHinhSanXuat.GroupSummary.Clear();
                     grvTinhHinhSanXuat.OptionsCustomization.AllowGroup = true;
                     grvTinhHinhSanXuat.ClearGrouping();
@@ -74,6 +79,15 @@ namespace OEE
                     item.DisplayFormat = "{0:N2}";
                     grvTinhHinhSanXuat.GroupSummary.Add(item);
 
+
+                    item = new GridGroupSummaryItem();
+                    item.FieldName = "ActualQuantity";
+                    item.ShowInGroupColumnFooter = grvTinhHinhSanXuat.Columns["ActualQuantity"];
+                    item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                    item.DisplayFormat = "{0:N2}";
+                    grvTinhHinhSanXuat.GroupSummary.Add(item);
+
+
                     item = new GridGroupSummaryItem();
                     item.FieldName = "DT";
                     item.ShowInGroupColumnFooter = grvTinhHinhSanXuat.Columns["DT"];
@@ -109,12 +123,12 @@ namespace OEE
                     item.DisplayFormat = "{0:N2}";
                     grvTinhHinhSanXuat.GroupSummary.Add(item);
 
-                    item = new GridGroupSummaryItem();
-                    item.FieldName = "ELP";
-                    item.ShowInGroupColumnFooter = grvTinhHinhSanXuat.Columns["ELP"];
-                    item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-                    item.DisplayFormat = "{0:N2}";
-                    grvTinhHinhSanXuat.GroupSummary.Add(item);
+                    //item = new GridGroupSummaryItem();
+                    //item.FieldName = "ELP";
+                    //item.ShowInGroupColumnFooter = grvTinhHinhSanXuat.Columns["ELP"];
+                    //item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                    //item.DisplayFormat = "{0:N2}";
+                    //grvTinhHinhSanXuat.GroupSummary.Add(item);
                 }
                 else
                 {

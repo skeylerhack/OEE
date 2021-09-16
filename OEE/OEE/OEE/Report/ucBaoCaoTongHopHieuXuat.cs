@@ -55,7 +55,7 @@ namespace OEE
                 decimal EL = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["EL"].SummaryItem.SummaryValue) /
 Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) * 100), 2);
                 decimal ELV = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["ELV"].SummaryItem.SummaryValue) /
-Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue)) * 100), 2);
+Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) * 100), 2);
 
                 grvTongHopHieuXuat.Columns["OEE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "OEE", ""+OEE+"%");
                 grvTongHopHieuXuat.Columns["PE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "PE", "" + PE + "%");
@@ -229,7 +229,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue)) * 
                     {
                         title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                         title.Value2 = "=(" + Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 6) + "/" +
-                          Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 2) + ")*100";
+                          Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 4) + ")*100";
                     }
                     title.NumberFormat = "#,##0.00";
                     title.ColumnWidth = 10;
