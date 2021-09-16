@@ -40,6 +40,8 @@ namespace OEE
                     Modules.ObjSystems.MLoadXtraGrid(grdTongHopHieuXuat, grvTongHopHieuXuat, dtmp, false, true,true, true, this.Name);
                 grvTongHopHieuXuat.Columns["TEN_MAY"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "TEN_MAY", "Tổng PX");
 
+                grvTongHopHieuXuat.Columns["TH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "TH", "{0}");
+
                 grvTongHopHieuXuat.Columns["TH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum,"TH", "{0}");
                     grvTongHopHieuXuat.Columns["GPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GPH", "{0}");
                     grvTongHopHieuXuat.Columns["NPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "NPH", "{0}");
@@ -57,7 +59,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue)) * 
 
                 grvTongHopHieuXuat.Columns["OEE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "OEE", ""+OEE+"%");
                 grvTongHopHieuXuat.Columns["PE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "PE", "" + PE + "%");
-                grvTongHopHieuXuat.Columns["ELP"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELP", "" + EL + "%");
+                //grvTongHopHieuXuat.Columns["ELP"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELP", "" + EL + "%");
                 grvTongHopHieuXuat.Columns["ELVP"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELVP", "" + ELV + "%");
 
                 DataTable dt = new DataTable();

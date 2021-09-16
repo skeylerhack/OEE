@@ -10,7 +10,7 @@ namespace OEE
         [STAThread]
         static void Main(string[] args)
         {
-            if (args[0].ToString() == "") return;
+            //if (args[0].ToString() == "") return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             BonusSkins.Register();
@@ -38,8 +38,8 @@ namespace OEE
             Commons.Modules.sSoLeTT = Commons.Modules.ObjSystems.sDinhDangSoLe(Commons.Modules.iSoLeTT);
             Commons.Modules.sSoLe4 = Commons.Modules.ObjSystems.sDinhDangSoLe(4);
             //Commons.Modules.TypeLanguage = Properties.Settings.Default.lang;
-            Thread t = new Thread(() => MRunForm(args[0].ToString()));
-            //Thread t = new Thread(() => MRunForm("mnuBaoCaoOEE"));
+            //Thread t = new Thread(() => MRunForm(args[0].ToString()));
+            Thread t = new Thread(() => MRunForm("mnuBaoCaoOEE"));
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
