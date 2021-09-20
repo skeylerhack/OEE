@@ -9,6 +9,7 @@ using System.Drawing;
 using System.IO;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid;
+using DevExpress.Utils;
 
 namespace OEE
 {
@@ -108,6 +109,10 @@ namespace OEE
                 if (grdPareto.DataSource == null)
                 {
                     Modules.ObjSystems.MLoadXtraGrid(grdPareto, grvPareto, dt,false, true, true, true,true, this.Name);
+
+                    grvPareto.Columns["TONG_SO_PHUT"].DisplayFormat.FormatType = FormatType.Numeric;
+                    grvPareto.Columns["TONG_SO_PHUT"].DisplayFormat.FormatString = Commons.Modules.sSoLeDG;
+
                     grvPareto.OptionsCustomization.AllowGroup = true;
                     grvPareto.ClearGrouping();
                     grvPareto.BeginSort();
