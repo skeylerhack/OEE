@@ -37,19 +37,16 @@ namespace OEE
                     gridColumn.Summary.Clear();
                 }
                 dtmp.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, "spGetBaoCaoTongHopHieuXuat", cboNhaXuong.EditValue, cboLoaiMay.EditValue, datTuNgay.DateTime, datDenNgay.DateTime, Commons.Modules.UserName, Commons.Modules.TypeLanguage));
-                    Modules.ObjSystems.MLoadXtraGrid(grdTongHopHieuXuat, grvTongHopHieuXuat, dtmp, false, true,true, true, this.Name);
+                Modules.ObjSystems.MLoadXtraGrid(grdTongHopHieuXuat, grvTongHopHieuXuat, dtmp, false, true, true, true, this.Name);
                 grvTongHopHieuXuat.Columns["TEN_MAY"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "TEN_MAY", "Tổng PX");
-
                 grvTongHopHieuXuat.Columns["TH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "TH", "{0}");
+                grvTongHopHieuXuat.Columns["GPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GPH", "{0}");
+                grvTongHopHieuXuat.Columns["NPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "NPH", "{0}");
+                grvTongHopHieuXuat.Columns["EL"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "EL", "{0}");
+                grvTongHopHieuXuat.Columns["ELV"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELV", "{0}");
 
-                grvTongHopHieuXuat.Columns["TH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum,"TH", "{0}");
-                    grvTongHopHieuXuat.Columns["GPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GPH", "{0}");
-                    grvTongHopHieuXuat.Columns["NPH"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "NPH", "{0}");
-                    grvTongHopHieuXuat.Columns["EL"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "EL", "{0}");
-                    grvTongHopHieuXuat.Columns["ELV"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELV", "{0}");
-
-                  decimal OEE = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue) /
-                      Convert.ToDecimal(grvTongHopHieuXuat.Columns["GPH"].SummaryItem.SummaryValue)) *100),2);
+                decimal OEE = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue) /
+                    Convert.ToDecimal(grvTongHopHieuXuat.Columns["GPH"].SummaryItem.SummaryValue)) * 100), 2);
                 decimal PE = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["TH"].SummaryItem.SummaryValue) /
     Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) * 100), 2);
                 decimal EL = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["EL"].SummaryItem.SummaryValue) /
@@ -57,7 +54,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 decimal ELV = Math.Round(((Convert.ToDecimal(grvTongHopHieuXuat.Columns["ELV"].SummaryItem.SummaryValue) /
 Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) * 100), 2);
 
-                grvTongHopHieuXuat.Columns["OEE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "OEE", ""+OEE+"%");
+                grvTongHopHieuXuat.Columns["OEE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "OEE", "" + OEE + "%");
                 grvTongHopHieuXuat.Columns["PE"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "PE", "" + PE + "%");
                 //grvTongHopHieuXuat.Columns["ELP"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELP", "" + EL + "%");
                 grvTongHopHieuXuat.Columns["ELVP"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ELVP", "" + ELV + "%");
@@ -83,7 +80,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
         }
         private void btnIn_Click(object sender, EventArgs e)
         {
-            if(grvTongHopHieuXuat.RowCount == 0)
+            if (grvTongHopHieuXuat.RowCount == 0)
             {
                 Modules.msgChung(ThongBao.msgKhongCoDuLieuIn);
                 return;
@@ -106,28 +103,28 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
             excelApplication.Visible = false;
             grvTongHopHieuXuat.ActiveFilter.Clear();
             grvTongHopHieuXuat.ExportToXlsx(sPath);
-            System.Globalization.CultureInfo oldCultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;  
+            System.Globalization.CultureInfo oldCultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
             Excel.Workbooks excelWorkbooks = excelApplication.Workbooks;
             Excel.Workbook excelWorkbook = excelWorkbooks.Open(sPath, 0, false, 5, "", "", false, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "", false, false, 0, true);
             Excel.Worksheet excelWorkSheet = (Excel.Worksheet)excelWorkbook.Sheets[1];
             try
             {
-                excelApplication.Cells.Borders.LineStyle = 0; 
+                excelApplication.Cells.Borders.LineStyle = 0;
                 excelApplication.Cells.Font.Name = "Tahoma";
                 excelApplication.Cells.Font.Size = 10;
-                excelWorkSheet.AutoFilterMode =false;
+                excelWorkSheet.AutoFilterMode = false;
                 excelWorkSheet.Application.ActiveWindow.FreezePanes = false;
                 Dong = Commons.Modules.MExcel.TaoTTChung(excelWorkSheet, 1, 2, 1, TCot);
                 Commons.Modules.MExcel.TaoLogo(excelWorkSheet, 0, 0, 110, 45, Application.StartupPath);
-                Commons.Modules.MExcel.ThemDong(excelWorkSheet, Microsoft.Office.Interop.Excel.XlInsertShiftDirection.xlShiftDown,4, Dong);
+                Commons.Modules.MExcel.ThemDong(excelWorkSheet, Microsoft.Office.Interop.Excel.XlInsertShiftDirection.xlShiftDown, 4, Dong);
                 Dong = 4;
                 Commons.Modules.MExcel.DinhDang(excelWorkSheet, Commons.Modules.ObjLanguages.GetLanguage(Commons.Modules.ModuleName,
                     this.Name, "TieuDeTongHopHieuXuat", Commons.Modules.TypeLanguage)
-                    , Dong, 2, "@", 16, true, Excel.XlHAlign.xlHAlignCenter, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot - 1,25);
+                    , Dong, 2, "@", 16, true, Excel.XlHAlign.xlHAlignCenter, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot - 1, 25);
                 Dong = 6;
-                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "" + lblDiaDiem.Text + "" + ": " + cboNhaXuong.Text, Dong, 4, "@", 9, true, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, (TCot / 2),15);
-                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "" + lblLoaiMay.Text + "" + ": " + cboLoaiMay.Text,Dong, (TCot / 2) + 1, "@", 9, true, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot - 3,15);
+                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "" + lblDiaDiem.Text + "" + ": " + cboNhaXuong.Text, Dong, 4, "@", 9, true, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, (TCot / 2), 15);
+                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "" + lblLoaiMay.Text + "" + ": " + cboLoaiMay.Text, Dong, (TCot / 2) + 1, "@", 9, true, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot - 3, 15);
 
 
 
@@ -137,9 +134,9 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 title.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#ffc000"));
                 Commons.Modules.MExcel.DinhDang(excelWorkSheet, "-2% < CL < 0%", Dong - 1, TCot - 1, "@", 9, false, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong - 1, TCot, 15);
 
-                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong , TCot - 2, Dong , TCot - 2);
+                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, TCot - 2, Dong, TCot - 2);
                 title.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#e26b0a"));
-                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "CL <= -2%" , Dong, TCot - 1,"@", 9, false, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot, 15);
+                Commons.Modules.MExcel.DinhDang(excelWorkSheet, "CL <= -2%", Dong, TCot - 1, "@", 9, false, Excel.XlHAlign.xlHAlignLeft, Excel.XlVAlign.xlVAlignCenter, true, Dong, TCot, 15);
 
 
                 Dong = Dong + 2;
@@ -157,7 +154,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
 
                 title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 7, Dong, 10);
                 title.Merge(true);
-                title.Value2 = "Thực tế "+ datTuNgay.DateTime.Year +"";
+                title.Value2 = "Thực tế " + datTuNgay.DateTime.Year + "";
                 title.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
                 title.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
                 title.Borders.LineStyle = 1;
@@ -176,12 +173,12 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
 
                 Dong++;
                 //Tô mầu table
-                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 1, Dong+ TDong+1, 1);
+                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 1, Dong + TDong + 1, 1);
                 title.Interior.Color = Color.FromArgb(252, 213, 180);
                 title.Font.Bold = true;
                 title.WrapText = true;
 
-                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 2, Dong , 10);
+                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 2, Dong, 10);
                 title.Interior.Color = Color.FromArgb(204, 192, 218);
                 title.Font.Bold = true;
                 title.WrapText = true;
@@ -192,40 +189,40 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 title.WrapText = true;
 
                 Dong++;
-                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, 1, Dong+ TDong, 1);
+                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, 1, Dong + TDong, 1);
                 title.Value2 = "TỔNG PX:";
 
-         
+
 
                 for (int i = 2; i <= TCot; i++)
                 {
                     title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                     if (i < 7)
                     {
-                        title.Value2 = "=SUM(" + Commons.Modules.MExcel.TimDiemExcel(Dong , i) + ":" +
-                            Commons.Modules.MExcel.TimDiemExcel(Dong + TDong -1, i) + "";
-              
+                        title.Value2 = "=SUM(" + Commons.Modules.MExcel.TimDiemExcel(Dong, i) + ":" +
+                            Commons.Modules.MExcel.TimDiemExcel(Dong + TDong - 1, i) + "";
+
                     }
-                    if(i ==7)
+                    if (i == 7)
                     {
                         title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                         title.Value2 = "=(" + Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 2) + "/" +
                           Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 3) + ")*100";
 
                     }
-                    if(i==8)
+                    if (i == 8)
                     {
                         title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                         title.Value2 = "=(" + Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 2) + "/" +
                           Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 4) + ")*100";
                     }
-                    if(i==9)
+                    if (i == 9)
                     {
                         title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                         title.Value2 = "=(" + Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 5) + "/" +
                           Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 4) + ")*100";
                     }
-                    if(i == 10)
+                    if (i == 10)
                     {
                         title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, i, Dong + TDong, i);
                         title.Value2 = "=(" + Commons.Modules.MExcel.TimDiemExcel(Dong + TDong, 6) + "/" +
@@ -241,12 +238,12 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong + TDong, 11, Dong + TDong, TCot);
                 //lấy table target yer của năm trước
                 DataTable dt = new DataTable();
-                dt.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, CommandType.Text, "SELECT OEE,PE,EL,SpeedVar FROM dbo.TargetOfYear WHERE YEAR = " + datTuNgay.DateTime.Year +""));
-                Commons.Modules.MExcel.MExportExcel(dt, excelWorkSheet, title,false);
+                dt.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, CommandType.Text, "SELECT OEE,PE,EL,SpeedVar FROM dbo.TargetOfYear WHERE YEAR = " + datTuNgay.DateTime.Year + ""));
+                Commons.Modules.MExcel.MExportExcel(dt, excelWorkSheet, title, false);
 
 
                 title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 7, Dong + TDong, 7);
-                condition =(title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlLessEqual, "=K" + Dong + " - 2"));
+                condition = (title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlLessEqual, "=K" + Dong + " - 2"));
                 condition.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#e26b0a"));
                 condition = (title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlBetween, "=K" + Dong + " - 2", "=K" + Dong));
                 condition.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#ffc000"));
@@ -260,7 +257,7 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 9, Dong + TDong, 9);
                 condition = (title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlGreater, "=M" + Dong + " +2"));
                 condition.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#e26b0a"));
-                condition = (title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlBetween, "=M" + Dong,"=M" + Dong + " +2"));
+                condition = (title.FormatConditions.Add(Excel.XlFormatConditionType.xlCellValue, Excel.XlFormatConditionOperator.xlBetween, "=M" + Dong, "=M" + Dong + " +2"));
                 condition.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#ffc000"));
 
                 title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong, 10, Dong + TDong, 10);
@@ -270,22 +267,22 @@ Convert.ToDecimal(grvTongHopHieuXuat.Columns["NPH"].SummaryItem.SummaryValue)) *
                 condition.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.ColorTranslator.FromHtml("#ffc000"));
 
 
-                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong-1,1, Dong + TDong,TCot);
+                title = Commons.Modules.MExcel.GetRange(excelWorkSheet, Dong - 1, 1, Dong + TDong, TCot);
                 title.Borders.LineStyle = 1;
 
-                Commons.Modules.MExcel.ColumnWidth(excelWorkSheet,21, "@", true, 1, 1, 1, 1);
+                Commons.Modules.MExcel.ColumnWidth(excelWorkSheet, 21, "@", true, 1, 1, 1, 1);
 
                 excelWorkbook.Save();
-            excelApplication.Visible = true;
-            Commons.Modules.ObjSystems.MReleaseObject(excelWorkSheet);
-            Commons.Modules.ObjSystems.MReleaseObject(excelWorkbook);
-            Commons.Modules.ObjSystems.MReleaseObject(excelApplication);
+                excelApplication.Visible = true;
+                Commons.Modules.ObjSystems.MReleaseObject(excelWorkSheet);
+                Commons.Modules.ObjSystems.MReleaseObject(excelWorkbook);
+                Commons.Modules.ObjSystems.MReleaseObject(excelApplication);
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(Commons.Modules.ModuleName, this.Name, "InKhongThanhCong", Commons.Modules.TypeLanguage) + ": " + ex.Message);
+            }
         }
-        catch (Exception ex)
-        {
-            XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(Commons.Modules.ModuleName, this.Name, "InKhongThanhCong", Commons.Modules.TypeLanguage) + ": " + ex.Message);
-        }
-    }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {

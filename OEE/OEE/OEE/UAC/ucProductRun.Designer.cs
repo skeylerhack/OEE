@@ -33,8 +33,8 @@
             DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            this.datKT = new DevExpress.XtraEditors.DateEdit();
             this.datBD = new DevExpress.XtraEditors.DateEdit();
+            this.datKT = new DevExpress.XtraEditors.DateEdit();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
@@ -66,21 +66,21 @@
             this.lblNote = new DevExpress.XtraEditors.LabelControl();
             this.txtNote = new DevExpress.XtraEditors.TextEdit();
             this.panelNN = new DevExpress.XtraEditors.PanelControl();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnKhong = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.btnChonLSX = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuNhapTGNM = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCapNhatTo = new System.Windows.Forms.ToolStripMenuItem();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datBD.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datBD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -121,35 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // datKT
-            // 
-            this.tablePanel3.SetColumn(this.datKT, 5);
-            this.datKT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.datKT.EditValue = null;
-            this.datKT.Location = new System.Drawing.Point(716, 37);
-            this.datKT.Name = "datKT";
-            this.datKT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datKT.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
-            this.datKT.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.datKT.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
-            this.datKT.Properties.DisplayFormat.FormatString = "G";
-            this.datKT.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.datKT.Properties.EditFormat.FormatString = "G";
-            this.datKT.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.datKT.Properties.Mask.EditMask = "G";
-            this.datKT.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.tablePanel3.SetRow(this.datKT, 2);
-            this.datKT.Size = new System.Drawing.Size(171, 22);
-            this.datKT.TabIndex = 2;
-            compareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual;
-            compareAgainstControlValidationRule2.Control = this.datBD;
-            compareAgainstControlValidationRule2.ErrorText = "This value is not valid";
-            compareAgainstControlValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.datKT, compareAgainstControlValidationRule2);
-            this.datKT.EditValueChanged += new System.EventHandler(this.datBD_EditValueChanged);
-            // 
             // datBD
             // 
             this.tablePanel3.SetColumn(this.datBD, 5);
@@ -173,12 +144,41 @@
             this.tablePanel3.SetRow(this.datBD, 1);
             this.datBD.Size = new System.Drawing.Size(171, 22);
             this.datBD.TabIndex = 2;
-            compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.LessOrEqual;
-            compareAgainstControlValidationRule1.Control = this.datKT;
+            compareAgainstControlValidationRule2.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.LessOrEqual;
+            compareAgainstControlValidationRule2.Control = this.datKT;
+            compareAgainstControlValidationRule2.ErrorText = "This value is not valid";
+            compareAgainstControlValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.datBD, compareAgainstControlValidationRule2);
+            this.datBD.EditValueChanged += new System.EventHandler(this.datBD_EditValueChanged);
+            // 
+            // datKT
+            // 
+            this.tablePanel3.SetColumn(this.datKT, 5);
+            this.datKT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.datKT.EditValue = null;
+            this.datKT.Location = new System.Drawing.Point(716, 37);
+            this.datKT.Name = "datKT";
+            this.datKT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datKT.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.datKT.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.datKT.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.datKT.Properties.DisplayFormat.FormatString = "G";
+            this.datKT.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.datKT.Properties.EditFormat.FormatString = "G";
+            this.datKT.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.datKT.Properties.Mask.EditMask = "G";
+            this.datKT.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.tablePanel3.SetRow(this.datKT, 2);
+            this.datKT.Size = new System.Drawing.Size(171, 22);
+            this.datKT.TabIndex = 2;
+            compareAgainstControlValidationRule1.CompareControlOperator = DevExpress.XtraEditors.DXErrorProvider.CompareControlOperator.GreaterOrEqual;
+            compareAgainstControlValidationRule1.Control = this.datBD;
             compareAgainstControlValidationRule1.ErrorText = "This value is not valid";
             compareAgainstControlValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.datBD, compareAgainstControlValidationRule1);
-            this.datBD.EditValueChanged += new System.EventHandler(this.datBD_EditValueChanged);
+            this.dxValidationProvider1.SetValidationRule(this.datKT, compareAgainstControlValidationRule1);
+            this.datKT.EditValueChanged += new System.EventHandler(this.datBD_EditValueChanged);
             // 
             // tablePanel1
             // 
@@ -632,16 +632,6 @@
             this.panelNN.Size = new System.Drawing.Size(1199, 35);
             this.panelNN.TabIndex = 7;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(1078, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(121, 35);
-            this.btnThoat.TabIndex = 12;
-            this.btnThoat.Text = "btnThoat";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -672,16 +662,6 @@
             this.btnSua.Text = "btnSua";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(958, 0);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(121, 35);
-            this.btnXoa.TabIndex = 10;
-            this.btnXoa.Text = "btnXoa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnGhi
             // 
             this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -702,13 +682,33 @@
             this.btnChonLSX.Text = "btnChonLSX";
             this.btnChonLSX.Click += new System.EventHandler(this.btnChonMay_Click);
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.Location = new System.Drawing.Point(1078, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(121, 35);
+            this.btnThoat.TabIndex = 12;
+            this.btnThoat.Text = "btnThoat";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Location = new System.Drawing.Point(958, 0);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(121, 35);
+            this.btnXoa.TabIndex = 10;
+            this.btnXoa.Text = "btnXoa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhapTGNM,
             this.mnuCapNhatTo});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(218, 70);
             // 
             // mnuNhapTGNM
             // 
@@ -734,10 +734,10 @@
             this.Text = "ucProductRun";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ucProductRun_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datBD.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datBD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datKT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();

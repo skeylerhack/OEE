@@ -754,7 +754,9 @@ D:\08.OEE\OEE\Common\Common\obj\Debug\Commons.csproj.CopyComplete
 D:\08.OEE\OEE\Common\Common\obj\Debug\Commons.dll
 D:\08.OEE\OEE\Common\Common\obj\Debug\Commons.pdb
 D:\01.OEE\OEE\Common\Common\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
-D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.PivotGrid.v20.1.Core.resources.dll
+D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.XtraReports.v20.1.resources.dll
+D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.XtraGauges.v20.1.Core.resources.dll
+D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\obj\Debug\Commons.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\Commons.dll.config
 D:\01.OEE\OEE\Common\Common\bin\Debug\Commons.dll
@@ -864,7 +866,6 @@ D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources
 D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
-D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.XtraReports.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.XtraReports.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.XtraReports.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.XtraReports.v20.1.resources.dll
@@ -894,14 +895,13 @@ D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.DataAccess.v20.1.resources.d
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.DataAccess.v20.1.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.PivotGrid.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.PivotGrid.v20.1.Core.resources.dll
+D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.PivotGrid.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.PivotGrid.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.XtraGauges.v20.1.Core.resources.dll
-D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.XtraGauges.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.XtraGauges.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.XtraGauges.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
-D:\01.OEE\OEE\Common\Common\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
 D:\01.OEE\OEE\Common\Common\obj\Debug\Commons.frmWaitForm.resources
 D:\01.OEE\OEE\Common\Common\obj\Debug\Commons.Properties.Resources.resources

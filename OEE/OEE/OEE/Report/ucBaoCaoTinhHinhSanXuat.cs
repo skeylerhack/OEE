@@ -129,6 +129,8 @@ namespace OEE
                     //item.SummaryType = DevExpress.Data.SummaryItemType.Sum;
                     //item.DisplayFormat = "{0:N2}";
                     //grvTinhHinhSanXuat.GroupSummary.Add(item);
+
+                    grvTinhHinhSanXuat.Columns["ActualQuantity"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "ActualQuantity", "{0:N2}");
                 }
                 else
                 {
