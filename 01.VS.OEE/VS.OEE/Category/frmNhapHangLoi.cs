@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
@@ -35,20 +30,16 @@ namespace VS.OEE
                 btnKhongGhi.Visible = true;
                 btnXoa.Visible = true;
             }
-
             this.lblDocNum.Font = new System.Drawing.Font(lblDocNum.Font, System.Drawing.FontStyle.Bold);
             this.lblQCName.Font = new System.Drawing.Font(lblQCName.Font, System.Drawing.FontStyle.Bold);
             this.lblQCDate.Font = new System.Drawing.Font(lblQCDate.Font, System.Drawing.FontStyle.Bold);
-
         }
-
-
 
         #region Event
         private void frmNhapHangLoi_Load(object sender, EventArgs e)
         {
             LoadData(-1);
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -201,18 +192,6 @@ namespace VS.OEE
         #endregion
 
         #region Function
-        public void LoadNN()
-        {
-            lblDocNum.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDocNum");
-            lblQCName.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblQCName");
-            lblQCDate.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblQCDate");
-            btnXoa.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnXoa");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnKhongGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnKhongGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-            Commons.Modules.ObjSystems.MLoadNNXtraGrid(grvChung, this.Name);
-        }
-
         private void LoadView()
         {
             frmNhapHangLoiView ctl = new frmNhapHangLoiView(iPQ, txtDocNum.Text, "spNhapHangLoi");
@@ -273,7 +252,7 @@ namespace VS.OEE
 
                 if (dt1 != null)
                 {
-                    Commons.Modules.ObjSystems.MLoadXtraGrid(grdChung, grvChung, dt1, true, true, false, false);
+                    Commons.Modules.ObjSystems.MLoadXtraGrid(grdChung, grvChung, dt1, true, true, false, false,true,this.Name);
                     LoadCbo_grvChung();
                     Format_grvChung();
                 }

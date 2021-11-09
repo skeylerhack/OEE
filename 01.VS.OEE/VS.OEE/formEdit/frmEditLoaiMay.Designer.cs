@@ -46,9 +46,9 @@
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtSTT_MAY = new DevExpress.XtraEditors.SpinEdit();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtMS_LOAI_MAY.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN_LOAI_MAY.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN_LOAI_MAY_ANH.Properties)).BeginInit();
@@ -57,10 +57,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGHI_CHU.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSTT_MAY.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSTT_MAY.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMS_LOAI_MAY
@@ -264,6 +264,19 @@
             this.tablePanel1.Size = new System.Drawing.Size(594, 368);
             this.tablePanel1.TabIndex = 0;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnGhi);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Location = new System.Drawing.Point(8, 331);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 8);
+            this.panelControl1.Size = new System.Drawing.Size(578, 29);
+            this.panelControl1.TabIndex = 16;
+            // 
             // txtSTT_MAY
             // 
             this.tablePanel1.SetColumn(this.txtSTT_MAY, 3);
@@ -286,18 +299,6 @@
             this.txtSTT_MAY.Size = new System.Drawing.Size(106, 20);
             this.txtSTT_MAY.TabIndex = 15;
             // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
-            this.panelControl1.Controls.Add(this.btnGhi);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Location = new System.Drawing.Point(8, 331);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 8);
-            this.panelControl1.Size = new System.Drawing.Size(578, 29);
-            this.panelControl1.TabIndex = 16;
-            // 
             // frmEditLoaiMay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,10 +318,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSTT_MAY.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSTT_MAY.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

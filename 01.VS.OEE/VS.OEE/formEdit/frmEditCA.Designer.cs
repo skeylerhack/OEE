@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtDEN_PHUT = new DevExpress.XtraEditors.SpinEdit();
             this.txtTU_PHUT = new DevExpress.XtraEditors.SpinEdit();
             this.txtCA_HOA = new DevExpress.XtraEditors.TextEdit();
@@ -49,9 +50,10 @@
             this.dedTU_GIO = new DevExpress.XtraEditors.TimeSpanEdit();
             this.dedDEN_GIO = new DevExpress.XtraEditors.TimeSpanEdit();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDEN_PHUT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTU_PHUT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCA_HOA.Properties)).BeginInit();
@@ -61,8 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dedTU_GIO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dedDEN_GIO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -102,15 +102,18 @@
             this.tablePanel1.Size = new System.Drawing.Size(584, 358);
             this.tablePanel1.TabIndex = 0;
             // 
-            // btnThoat
+            // panelControl1
             // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(498, 1);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(80, 26);
-            this.btnThoat.TabIndex = 2;
-            this.btnThoat.Text = "btnThoat";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnGhi);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Location = new System.Drawing.Point(3, 326);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 6);
+            this.panelControl1.Size = new System.Drawing.Size(578, 29);
+            this.panelControl1.TabIndex = 16;
             // 
             // btnGhi
             // 
@@ -121,6 +124,16 @@
             this.btnGhi.TabIndex = 3;
             this.btnGhi.Text = "btnGhi";
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.Location = new System.Drawing.Point(498, 1);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(80, 26);
+            this.btnThoat.TabIndex = 2;
+            this.btnThoat.Text = "btnThoat";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtDEN_PHUT
             // 
@@ -204,10 +217,10 @@
             this.tablePanel1.SetRow(this.txtCA, 0);
             this.txtCA.Size = new System.Drawing.Size(286, 20);
             this.txtCA.TabIndex = 8;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider1.SetValidationRule(this.txtCA, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider1.SetValidationRule(this.txtCA, conditionValidationRule1);
             // 
             // chkCA_DEM
             // 
@@ -339,18 +352,6 @@
             this.dedDEN_GIO.Size = new System.Drawing.Size(172, 20);
             this.dedDEN_GIO.TabIndex = 12;
             // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
-            this.panelControl1.Controls.Add(this.btnGhi);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Location = new System.Drawing.Point(3, 326);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 6);
-            this.panelControl1.Size = new System.Drawing.Size(578, 29);
-            this.panelControl1.TabIndex = 16;
-            // 
             // frmEditCA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +365,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtDEN_PHUT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTU_PHUT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCA_HOA.Properties)).EndInit();
@@ -373,8 +376,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dedTU_GIO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dedDEN_GIO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

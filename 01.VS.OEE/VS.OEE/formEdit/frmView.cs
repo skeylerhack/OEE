@@ -1,15 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting;
-using Microsoft.ApplicationBlocks.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
 namespace VS.OEE
@@ -31,14 +24,10 @@ namespace VS.OEE
             InitializeComponent();
             sPS = SP;
             iPQ = PQ;
-            
         }
-
         private void frmView_Load(object sender, EventArgs e)
         {
             LoadData("-1");
-            
-
             if (iPQ != 1)
             {
                 btnIN.Visible = false;
@@ -56,7 +45,6 @@ namespace VS.OEE
                 }
             }
             LoadNN();
-
             Commons.Modules.ObjSystems.MSaveResertGrid(grvChung, this.Name);
         }
         
@@ -93,11 +81,9 @@ namespace VS.OEE
                         Commons.Modules.ObjSystems.MLoadXtraGrid(grdChung, grvChung, dtTmp, false, true, true, true);
                     else
                         Commons.Modules.ObjSystems.MLoadXtraGrid(grdChung, grvChung, dtTmp, false, true, false, true);
-
                     #region TAO GROUP
                     if (this.Tag.ToString().ToUpper() == "mnuOEENhomMay".ToUpper())
                     {
-
                         AddGroup();
                         try
                         {
@@ -110,7 +96,6 @@ namespace VS.OEE
                             grvChung.EndSort();
                         }
                         grvChung.ExpandAllGroups();
-
                     }
 
                     if (this.Tag.ToString().ToUpper() == "mnuOEEToPhongBan".ToUpper())

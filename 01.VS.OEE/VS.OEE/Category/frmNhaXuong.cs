@@ -121,7 +121,7 @@ namespace VS.OEE
             {
                 XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(this.Name, "msgGhi_ThatBai") + "\n" + ex.Message.ToString());
             }
-            
+
         }
 
         private void btnKhongGhi_Click(object sender, EventArgs e)
@@ -138,18 +138,24 @@ namespace VS.OEE
 
         private void TreeList_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
-            iMS_N_XUONG = TreeList.FocusedNode["MS_N_XUONG"].ToString();
-            LoadText();
+            try
+            {
+                iMS_N_XUONG = TreeList.FocusedNode["MS_N_XUONG"].ToString();
+                LoadText();
+            }
+            catch
+            {
+            }
         }
         #endregion
 
         #region Function
-      
+
 
         private void LoadTreeList()
         {
             TreeList.DataSource = null;
-            
+
             System.Data.SqlClient.SqlConnection conn;
             conn = new System.Data.SqlClient.SqlConnection(Commons.IConnections.CNStr);
             conn.Open();
@@ -193,8 +199,8 @@ namespace VS.OEE
 
             TreeList.ExpandAll();
             TreeList.EndUpdate();
-            
-          
+
+
             try
             {
 

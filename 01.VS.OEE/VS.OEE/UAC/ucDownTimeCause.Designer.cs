@@ -36,13 +36,13 @@
             this.panelNN = new DevExpress.XtraEditors.PanelControl();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSearch = new DevExpress.XtraEditors.SearchControl();
+            this.grdDownTimeCause = new DevExpress.XtraGrid.GridControl();
+            this.grvDownTimeCause = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.btnKhong = new DevExpress.XtraEditors.SimpleButton();
-            this.grdDownTimeCause = new DevExpress.XtraGrid.GridControl();
-            this.grvDownTimeCause = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtSearch = new DevExpress.XtraEditors.SearchControl();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.panelChung = new DevExpress.Utils.Layout.TablePanel();
             this.chkHuHong = new DevExpress.XtraEditors.CheckEdit();
@@ -56,9 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNN.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNN)).BeginInit();
             this.panelNN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDownTimeCause)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDownTimeCause)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelChung)).BeginInit();
             this.panelChung.SuspendLayout();
@@ -171,45 +171,20 @@
             this.btnThoat.Text = "btnThoat";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnThem
+            // txtSearch
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.Location = new System.Drawing.Point(639, 1);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(80, 26);
-            this.btnThem.TabIndex = 5;
-            this.btnThem.Text = "btnThem";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(801, 1);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 26);
-            this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "btnXoa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGhi.Location = new System.Drawing.Point(801, 1);
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.Size = new System.Drawing.Size(80, 26);
-            this.btnGhi.TabIndex = 5;
-            this.btnGhi.Text = "btnGhi";
-            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
-            // 
-            // btnKhong
-            // 
-            this.btnKhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKhong.Location = new System.Drawing.Point(882, 1);
-            this.btnKhong.Name = "btnKhong";
-            this.btnKhong.Size = new System.Drawing.Size(80, 26);
-            this.btnKhong.TabIndex = 5;
-            this.btnKhong.Text = "btnKhong";
-            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSearch.Client = this.grdDownTimeCause;
+            this.txtSearch.EnterMoveNextControl = true;
+            this.txtSearch.Location = new System.Drawing.Point(1, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.txtSearch.Properties.Client = this.grdDownTimeCause;
+            this.txtSearch.Properties.FindDelay = 100;
+            this.txtSearch.Size = new System.Drawing.Size(200, 20);
+            this.txtSearch.TabIndex = 3;
             // 
             // grdDownTimeCause
             // 
@@ -250,20 +225,45 @@
             this.grvDownTimeCause.RowHeight = 1;
             this.grvDownTimeCause.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvChung_FocusedRowChanged);
             // 
-            // txtSearch
+            // btnThem
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtSearch.Client = this.grdDownTimeCause;
-            this.txtSearch.EnterMoveNextControl = true;
-            this.txtSearch.Location = new System.Drawing.Point(1, 7);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.txtSearch.Properties.Client = this.grdDownTimeCause;
-            this.txtSearch.Properties.FindDelay = 100;
-            this.txtSearch.Size = new System.Drawing.Size(200, 20);
-            this.txtSearch.TabIndex = 3;
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.Location = new System.Drawing.Point(639, 1);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(80, 26);
+            this.btnThem.TabIndex = 5;
+            this.btnThem.Text = "btnThem";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Location = new System.Drawing.Point(801, 1);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(80, 26);
+            this.btnXoa.TabIndex = 5;
+            this.btnXoa.Text = "btnXoa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGhi.Location = new System.Drawing.Point(801, 1);
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(80, 26);
+            this.btnGhi.TabIndex = 5;
+            this.btnGhi.Text = "btnGhi";
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnKhong
+            // 
+            this.btnKhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKhong.Location = new System.Drawing.Point(882, 1);
+            this.btnKhong.Name = "btnKhong";
+            this.btnKhong.Size = new System.Drawing.Size(80, 26);
+            this.btnKhong.TabIndex = 5;
+            this.btnKhong.Text = "btnKhong";
+            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
             // 
             // txtID
             // 
@@ -403,16 +403,16 @@
             this.ClientSize = new System.Drawing.Size(967, 474);
             this.Controls.Add(this.panelChung);
             this.Name = "ucDownTimeCause";
-            this.Text = "ucDownTimeType";
+            this.Text = "ucDownTimeCause";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ucDownTimeType_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNNA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNN.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNN)).EndInit();
             this.panelNN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdDownTimeCause)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvDownTimeCause)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelChung)).EndInit();
             this.panelChung.ResumeLayout(false);

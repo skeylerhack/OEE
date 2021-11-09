@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnIN = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTim = new DevExpress.XtraEditors.SearchControl();
             this.grdChung = new DevExpress.XtraGrid.GridControl();
             this.grvChung = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtTim = new DevExpress.XtraEditors.SearchControl();
-            this.btnIN = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdChung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvChung)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTim.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdChung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvChung)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -60,6 +60,54 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 35F)});
             this.tablePanel1.Size = new System.Drawing.Size(708, 444);
             this.tablePanel1.TabIndex = 0;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.panelControl1.Controls.Add(this.btnIN);
+            this.panelControl1.Controls.Add(this.btnXoa);
+            this.panelControl1.Controls.Add(this.txtTim);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Controls.Add(this.btnThem);
+            this.panelControl1.Location = new System.Drawing.Point(3, 412);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 1);
+            this.panelControl1.Size = new System.Drawing.Size(702, 29);
+            this.panelControl1.TabIndex = 3;
+            // 
+            // btnIN
+            // 
+            this.btnIN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIN.Location = new System.Drawing.Point(458, 2);
+            this.btnIN.Name = "btnIN";
+            this.btnIN.Size = new System.Drawing.Size(80, 26);
+            this.btnIN.TabIndex = 0;
+            this.btnIN.Text = "btnIN";
+            this.btnIN.Click += new System.EventHandler(this.btnIN_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.Location = new System.Drawing.Point(539, 2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(80, 26);
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = "btnXoa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // txtTim
+            // 
+            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtTim.Client = this.grdChung;
+            this.txtTim.Location = new System.Drawing.Point(1, 7);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.txtTim.Properties.Client = this.grdChung;
+            this.txtTim.Size = new System.Drawing.Size(200, 20);
+            this.txtTim.TabIndex = 1;
             // 
             // grdChung
             // 
@@ -83,29 +131,6 @@
             this.grvChung.OptionsView.ShowGroupPanel = false;
             this.grvChung.DoubleClick += new System.EventHandler(this.grvChung_DoubleClick);
             // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtTim.Client = this.grdChung;
-            this.txtTim.Location = new System.Drawing.Point(1, 7);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.txtTim.Properties.Client = this.grdChung;
-            this.txtTim.Size = new System.Drawing.Size(200, 20);
-            this.txtTim.TabIndex = 1;
-            // 
-            // btnIN
-            // 
-            this.btnIN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIN.Location = new System.Drawing.Point(458, 2);
-            this.btnIN.Name = "btnIN";
-            this.btnIN.Size = new System.Drawing.Size(80, 26);
-            this.btnIN.TabIndex = 0;
-            this.btnIN.Text = "btnIN";
-            this.btnIN.Click += new System.EventHandler(this.btnIN_Click);
-            // 
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -116,16 +141,6 @@
             this.btnThoat.Text = "btnThoat";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.Location = new System.Drawing.Point(539, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(80, 26);
-            this.btnXoa.TabIndex = 0;
-            this.btnXoa.Text = "btnXoa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -135,20 +150,6 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "btnThem";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.panelControl1.Controls.Add(this.btnIN);
-            this.panelControl1.Controls.Add(this.btnXoa);
-            this.panelControl1.Controls.Add(this.txtTim);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Controls.Add(this.btnThem);
-            this.panelControl1.Location = new System.Drawing.Point(3, 412);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 1);
-            this.panelControl1.Size = new System.Drawing.Size(702, 29);
-            this.panelControl1.TabIndex = 3;
             // 
             // frmView
             // 
@@ -167,11 +168,11 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmView_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdChung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grvChung)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTim.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdChung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvChung)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -32,9 +32,9 @@
             this.txtUSER_NAME = new DevExpress.XtraEditors.TextEdit();
             this.btnXacNhan = new DevExpress.XtraEditors.SimpleButton();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblPass = new DevExpress.XtraEditors.LabelControl();
             this.lblUserName = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtPASSWORD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUSER_NAME.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -94,6 +94,18 @@
             this.tablePanel1.Size = new System.Drawing.Size(291, 100);
             this.tablePanel1.TabIndex = 2;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 2);
+            this.panelControl1.Controls.Add(this.btnXacNhan);
+            this.panelControl1.Location = new System.Drawing.Point(3, 68);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 4);
+            this.panelControl1.Size = new System.Drawing.Size(285, 29);
+            this.panelControl1.TabIndex = 15;
+            // 
             // lblPass
             // 
             this.tablePanel1.SetColumn(this.lblPass, 0);
@@ -113,17 +125,6 @@
             this.lblUserName.Size = new System.Drawing.Size(65, 13);
             this.lblUserName.TabIndex = 14;
             this.lblUserName.Text = "lblUserName";
-            // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 2);
-            this.panelControl1.Controls.Add(this.btnXacNhan);
-            this.panelControl1.Location = new System.Drawing.Point(3, 68);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 4);
-            this.panelControl1.Size = new System.Drawing.Size(285, 29);
-            this.panelControl1.TabIndex = 15;
             // 
             // frmXacNhan
             // 

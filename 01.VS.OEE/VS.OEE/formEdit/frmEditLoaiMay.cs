@@ -39,7 +39,7 @@ namespace VS.OEE
         private void frmEditLoaiMay_Load(object sender, EventArgs e)
         {
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
         private void LoadText()
         {
@@ -60,19 +60,6 @@ namespace VS.OEE
             }
         }
 
-        public void LoadNN()
-        {
-            lblMS_LOAI_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMS_LOAI_MAY");
-            lblSTT_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblSTT_MAY");
-            lblTEN_LOAI_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_LOAI_MAY");
-            lblTEN_LOAI_MAY_ANH.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_LOAI_MAY_ANH");
-            lblTEN_LOAI_MAY_HOA.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_LOAI_MAY_HOA");
-            lblGHI_CHU.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblGHI_CHU");
-            chkATTACHMENT.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "chkATTACHMENT");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-
-        }
         private void btnGhi_Click(object sender, EventArgs e)
         {
             try

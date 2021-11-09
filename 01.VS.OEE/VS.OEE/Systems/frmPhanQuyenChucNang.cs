@@ -12,7 +12,7 @@ namespace VS.OEE
     {
         static int iPQ = 1;// == 1  full; <> 1 la read only
         RepositoryItemLookUpEdit cboPQ = new RepositoryItemLookUpEdit();
-         public frmPhanQuyenChucNang(int PQ)
+        public frmPhanQuyenChucNang(int PQ)
         {
             iPQ = PQ;
 
@@ -145,57 +145,56 @@ namespace VS.OEE
         {
             try
             {
+                System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(Commons.IConnections.CNStr);
+                conn.Open();
+                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("spNguoiDung", conn);
+                cmd.Parameters.Add("@sDMuc", SqlDbType.NVarChar).Value = "mnuPhanQuyenChucNang";
+                cmd.Parameters.Add("@iLoai", SqlDbType.Int).Value = 1;
+                cmd.Parameters.Add("@NNgu", SqlDbType.Int).Value = Commons.Modules.TypeLanguage;
+                cmd.Parameters.Add("@iID", SqlDbType.BigInt).Value = int.Parse(cboNhom.SelectedValue.ToString());
+                cmd.Parameters.Add("@COT6", SqlDbType.Bit).Value = them;
+                cmd.CommandType = CommandType.StoredProcedure;
+                System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                DataTable dt = new DataTable();
+                dt = ds.Tables[0].Copy();
+                dt.Columns["TEN_MENU"].ReadOnly = true;
+                treeListMenu.DataSource = null;
+                treeListMenu.BeginUpdate();
+                treeListMenu.DataSource = dt;
+                treeListMenu.KeyFieldName = "KEY_MENU";
+                treeListMenu.ParentFieldName = "MENU_PARENT";
+                treeListMenu.CheckBoxFieldName = "CHON";
 
-            System.Data.SqlClient.SqlConnection conn = new System.Data.SqlClient.SqlConnection(Commons.IConnections.CNStr);
-            conn.Open();
-            System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("spNguoiDung", conn);
-            cmd.Parameters.Add("@sDMuc", SqlDbType.NVarChar).Value = "mnuPhanQuyenChucNang";
-            cmd.Parameters.Add("@iLoai", SqlDbType.Int).Value = 1;
-            cmd.Parameters.Add("@NNgu", SqlDbType.Int).Value = Commons.Modules.TypeLanguage;
-            cmd.Parameters.Add("@iID", SqlDbType.BigInt).Value = int.Parse(cboNhom.SelectedValue.ToString());
-            cmd.Parameters.Add("@COT6", SqlDbType.Bit).Value = them;
-            cmd.CommandType = CommandType.StoredProcedure;
-            System.Data.SqlClient.SqlDataAdapter da = new System.Data.SqlClient.SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            DataTable dt = new DataTable();
-            dt = ds.Tables[0].Copy();
-            dt.Columns["TEN_MENU"].ReadOnly = true;
-            treeListMenu.DataSource = null;
-            treeListMenu.BeginUpdate();
-            treeListMenu.DataSource = dt;
-            treeListMenu.KeyFieldName = "KEY_MENU";
-            treeListMenu.ParentFieldName = "MENU_PARENT";
-            treeListMenu.CheckBoxFieldName = "CHON";
-
-            //Config treelist view
-            treeListMenu.Columns["CHON"].Visible = false;
+                //Config treelist view
+                treeListMenu.Columns["CHON"].Visible = false;
                 treeListMenu.Columns["STT_MENU"].Visible = false;
                 treeListMenu.Columns["ID_MENU"].Visible = false;
                 treeListMenu.Columns["TEN_MENU"].Width = 500;
 
-            DataTable dt1 = new DataTable();
-            dt1 = ds.Tables[1].Copy();
+                DataTable dt1 = new DataTable();
+                dt1 = ds.Tables[1].Copy();
 
-            Commons.Modules.ObjSystems.AddCombobyTree(cboPQ, "ID_PERMISSION", "TEN_PERMISSION", treeListMenu, dt1);
-            try
-            {
-                cboPQ.BeforePopup += cboPQ_BeforePopup;
-            }
-            catch { }
-
-            treeListMenu.Columns["TEN_MENU"].Caption = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "TEN_MENU");
-            treeListMenu.Columns["ID_PERMISSION"].Caption = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "ID_PERMISSION");
-            treeListMenu.EndUpdate();
-            treeListMenu.ExpandAll();
-            try
-            {
-                foreach (TreeListNode item in treeListMenu.Nodes)
+                Commons.Modules.ObjSystems.AddCombobyTree(cboPQ, "ID_PERMISSION", "TEN_PERMISSION", treeListMenu, dt1);
+                try
                 {
-                    setcheck(item);
+                    cboPQ.BeforePopup += cboPQ_BeforePopup;
                 }
-            }
-            catch { }
+                catch { }
+
+                treeListMenu.Columns["TEN_MENU"].Caption = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "TEN_MENU");
+                treeListMenu.Columns["ID_PERMISSION"].Caption = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "ID_PERMISSION");
+                treeListMenu.EndUpdate();
+                treeListMenu.ExpandAll();
+                try
+                {
+                    foreach (TreeListNode item in treeListMenu.Nodes)
+                    {
+                        setcheck(item);
+                    }
+                }
+                catch { }
 
 
 

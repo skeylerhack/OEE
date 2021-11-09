@@ -16,16 +16,18 @@ namespace VS.OEE
 {
     public partial class frmProductRun : DevExpress.XtraEditors.XtraForm
     {
+        static int iPQ =1;
         Int64 iThem = 0;
         string sBT = "TMPProDucRunDetails" + Commons.Modules.UserName;
         DataTable tbProRunDetails = new DataTable();
-        public frmProductRun()
+        public frmProductRun(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
         }
         private void frmProductRun_Load(object sender, EventArgs e)
         {
-            if (Modules.iPermission != 1)
+            if (iPQ != 1)
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;

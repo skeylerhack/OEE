@@ -39,7 +39,7 @@ namespace VS.OEE
         private void frmDonVi_Load(object sender, EventArgs e)
         {
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -86,22 +86,6 @@ namespace VS.OEE
         #endregion
 
         #region Function
-        public void LoadNN()
-        {
-            lblMS_DON_VI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMS_DON_VI");
-            lblTEN_DON_VI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_DON_VI");
-            lblTEN_DON_VI_ANH.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_DON_VI_ANH");
-            lblTEN_DON_VI_HOA.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_DON_VI_HOA");
-            lblTEN_NGAN.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_NGAN");
-            lblTEN_RUT_GON.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_RUT_GON");
-            lblDIA_CHI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDIA_CHI");
-            lblDIEN_THOAI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDIEN_THOAI");
-            lblFAX.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblFAX");
-            lblMAC_DINH.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMAC_DINH");
-            lblTHUE_NGOAI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTHUE_NGOAI");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
 
         private void LoadText()
         {

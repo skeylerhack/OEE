@@ -21,7 +21,6 @@ namespace VS.OEE
         {
             drRow = row;
             AddEdit = bAddEdit;
-
             InitializeComponent();
             try
             {
@@ -37,7 +36,7 @@ namespace VS.OEE
         private void frmEditNhomLoi_Load(object sender, EventArgs e)
         {
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -102,16 +101,7 @@ namespace VS.OEE
             }
         }
 
-        public void LoadNN()
-        {
-            lblTHU_TU.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTHU_TU");
-            lblDefectGroupName.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDefectGroupName");
-            lblDefectGroupName_E.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDefectGroupName_E");
-            lblDefectGroupName_C.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDefectGroupName_C");
-            lblNote.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblNote");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
+
 
         private Boolean KiemTrung(int Cot)
         {

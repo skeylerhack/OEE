@@ -16,9 +16,10 @@ namespace VS.OEE
 {
     public partial class ucDownTimeType : DevExpress.XtraEditors.XtraForm
     {
-        
-        public ucDownTimeType()
+        static int iPQ = 1;
+        public ucDownTimeType(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
             LockControl(true);
             Commons.Modules.ObjSystems.ThayDoiNN(this);
@@ -29,12 +30,11 @@ namespace VS.OEE
             {
                 LoadData(-1);
                 LoadText(false);
-                if (Modules.iPermission != 1)
+                if (iPQ != 1)
                 {
                     this.btnThem.Visible = false;
                     this.btnSua.Visible = false;
                     this.btnXoa.Visible = false;
-                    this.btnThoat.Visible = false;
                     this.btnGhi.Visible = false;
                     this.btnKhong.Visible = false;
                 }
@@ -56,6 +56,7 @@ namespace VS.OEE
             txtDownTimeTypeA.Properties.ReadOnly = bLock;
             txtDownTimeTypeH.Properties.ReadOnly = bLock;
             txtNote.Properties.ReadOnly = bLock;
+            chkHMIType.Properties.ReadOnly = bLock;
 
             txtSearch.ReadOnly = !bLock;
             grdDownTimeType.Enabled = bLock;
@@ -78,6 +79,7 @@ namespace VS.OEE
                 txtDownTimeTypeA.Text = (nullText ? "" : Modules.ToStr(grvDownTimeType.GetFocusedRowCellValue("DownTimeTypeNameA")));
                 txtDownTimeTypeH.Text = (nullText ? "" : Modules.ToStr(grvDownTimeType.GetFocusedRowCellValue("DownTimeTypeNameH")));
                 txtNote.Text = (nullText ? "" : Modules.ToStr(grvDownTimeType.GetFocusedRowCellValue("Note").ToString()).ToString());
+                chkHMIType.Checked = (nullText ? false : Modules.ToBoolean(grvDownTimeType.GetFocusedRowCellValue("HMIType")));
             }
             catch (Exception ex)
             {
@@ -293,11 +295,11 @@ namespace VS.OEE
                     return false;
                 }
                 object rs = IConnections.MExecuteScalar("SELECT COUNT(*) FROM dbo.DownTimeType WHERE DownTimeTypeName = N'" + txtDownTimeType.Text + "' " + (txtID.Text == "-1" ? "" : "AND ID <> " + txtID.Text));
-                if (rs != null && (Int32)rs > 0)
-                {
-                    Modules.msgThayThe(ThongBao.msgDaTonTai, lblDownTimeType.Text, txtDownTimeType);
-                    return false;
-                }
+                //if (rs != null && (Int32)rs > 0)
+                //{
+                //    Modules.msgThayThe(ThongBao.msgDaTonTai, lblDownTimeType.Text, txtDownTimeType);
+                //    return false;
+                //}
                 #endregion
                 var comd = new SqlCommand();
                 comd.CommandType = CommandType.StoredProcedure;
@@ -308,6 +310,7 @@ namespace VS.OEE
                 comd.Parameters.Add(new SqlParameter("@DownTimeTypeNameA", Modules.ToStr(txtDownTimeTypeA.Text)));
                 comd.Parameters.Add(new SqlParameter("@DownTimeTypeNameH", Modules.ToStr(txtDownTimeTypeH.Text)));
                 comd.Parameters.Add(new SqlParameter("@Note", Modules.ToStr(txtNote.Text)));
+                comd.Parameters.Add(new SqlParameter("@HMIType", Modules.ToBoolean(chkHMIType.Checked)));
                 rs = null;
                 rs = IConnections.MExecuteScalar(comd);
                 LoadData(Modules.ToInt16(rs));
@@ -361,6 +364,7 @@ namespace VS.OEE
                 txtDownTimeTypeA.Text = (nullText ? "" : Modules.ToStr(dt.Rows[0]["DownTimeTypeNameA"].ToString()));
                 txtDownTimeTypeH.Text = (nullText ? "" : Modules.ToStr(dt.Rows[0]["DownTimeTypeNameH"].ToString()));
                 txtNote.Text = (nullText ? "" : Modules.ToStr(dt.Rows[0]["Note"].ToString()));
+                chkHMIType.Checked = (nullText ? false : Modules.ToBoolean(dt.Rows[0]["HMIType"]));
             }
             catch
             {

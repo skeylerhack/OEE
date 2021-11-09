@@ -40,7 +40,8 @@ namespace VS.OEE
         private void frmEditDonViTinh_Load(object sender, EventArgs e)
         {
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
+
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -80,19 +81,7 @@ namespace VS.OEE
             this.Close();
         }
         #endregion
-
         #region Function
-        public void LoadNN()
-        {
-            lblDVT.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDVT");
-            lblTEN_1.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_1");
-            lblTEN_2.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_2");
-            lblTEN_3.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_3");
-            lblSO_SO_LE.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblSO_SO_LE");
-            lblGHI_CHU.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblGHI_CHU");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
 
         private void LoadText()
         {

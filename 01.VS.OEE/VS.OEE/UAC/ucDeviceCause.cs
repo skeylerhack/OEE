@@ -74,6 +74,7 @@ namespace VS.OEE
                 dt.Columns["TEN_NGUYEN_NHAN"].ReadOnly = true;
                 dt.Columns["CauseCode"].ReadOnly = true;
                 dt.Columns["DVT"].ReadOnly = false;
+                dt.Columns["HMI"].ReadOnly = false;
                 if (grdDeviceCause.DataSource == null)
                 {
                     Commons.Modules.ObjSystems.MLoadXtraGrid(grdDeviceCause, grvDeviceCause, dt, false, true, true,false, true, this.Name);

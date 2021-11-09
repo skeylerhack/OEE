@@ -17,19 +17,21 @@ namespace VS.OEE
 {
     public partial class frmProductOrder : DevExpress.XtraEditors.XtraForm
     {
+        static int iPQ = 1;
         Int64 ithem = 0;
         string sBTDetail = "TMPProDucDetails" + Commons.Modules.UserName;
         string sBTSchedule = "TMPProSchedule" + Commons.Modules.UserName;
         DataTable tbProSchedule = new DataTable();
-        public frmProductOrder()
+        public frmProductOrder(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
         }
 
         #region eventForm
         private void frmItemMay_Load(object sender, EventArgs e)
         {
-            if (Modules.iPermission != 1)
+            if (iPQ != 1)
             {
                 this.btnThem.Visible = false;
                 this.btnSua.Visible = false;

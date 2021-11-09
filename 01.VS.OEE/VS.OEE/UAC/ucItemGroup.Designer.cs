@@ -38,15 +38,15 @@
             this.txtGroupName = new DevExpress.XtraEditors.TextEdit();
             this.panelNN = new DevExpress.XtraEditors.PanelControl();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.txtSearch = new DevExpress.XtraEditors.SearchControl();
+            this.grdGroupUOM = new DevExpress.XtraGrid.GridControl();
+            this.grvGroupUOM = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnThem = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.btnKhong = new DevExpress.XtraEditors.SimpleButton();
-            this.grdGroupUOM = new DevExpress.XtraGrid.GridControl();
-            this.grvGroupUOM = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtSearch = new DevExpress.XtraEditors.SearchControl();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.panelChung = new DevExpress.Utils.Layout.TablePanel();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupNameH.Properties)).BeginInit();
@@ -55,10 +55,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNN)).BeginInit();
             this.panelNN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGroupUOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGroupUOM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelChung)).BeginInit();
             this.panelChung.SuspendLayout();
@@ -182,6 +182,66 @@
             this.btnSua.Text = "btnSua";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSearch.Client = this.grdGroupUOM;
+            this.txtSearch.EnterMoveNextControl = true;
+            this.txtSearch.Location = new System.Drawing.Point(2, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton()});
+            this.txtSearch.Properties.Client = this.grdGroupUOM;
+            this.txtSearch.Properties.FindDelay = 100;
+            this.txtSearch.Size = new System.Drawing.Size(177, 20);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // grdGroupUOM
+            // 
+            this.panelChung.SetColumn(this.grdGroupUOM, 0);
+            this.panelChung.SetColumnSpan(this.grdGroupUOM, 8);
+            this.grdGroupUOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdGroupUOM.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.grdGroupUOM.Location = new System.Drawing.Point(2, 70);
+            this.grdGroupUOM.MainView = this.grvGroupUOM;
+            this.grdGroupUOM.Margin = new System.Windows.Forms.Padding(2);
+            this.grdGroupUOM.Name = "grdGroupUOM";
+            this.panelChung.SetRow(this.grdGroupUOM, 4);
+            this.grdGroupUOM.Size = new System.Drawing.Size(959, 367);
+            this.grdGroupUOM.TabIndex = 7;
+            this.grdGroupUOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grvGroupUOM,
+            this.gridView1});
+            // 
+            // grvGroupUOM
+            // 
+            this.grvGroupUOM.ColumnPanelRowHeight = 1;
+            this.grvGroupUOM.DetailHeight = 227;
+            this.grvGroupUOM.FixedLineWidth = 1;
+            this.grvGroupUOM.GridControl = this.grdGroupUOM;
+            this.grvGroupUOM.Name = "grvGroupUOM";
+            this.grvGroupUOM.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.grvGroupUOM.OptionsBehavior.AutoExpandAllGroups = true;
+            this.grvGroupUOM.OptionsCustomization.AllowRowSizing = true;
+            this.grvGroupUOM.OptionsFilter.ColumnFilterPopupMode = DevExpress.XtraGrid.Columns.ColumnFilterPopupMode.Excel;
+            this.grvGroupUOM.OptionsFind.FindDelay = 100;
+            this.grvGroupUOM.OptionsNavigation.EnterMoveNextColumn = true;
+            this.grvGroupUOM.OptionsPrint.AllowMultilineHeaders = true;
+            this.grvGroupUOM.OptionsScrollAnnotations.ShowCustomAnnotations = DevExpress.Utils.DefaultBoolean.True;
+            this.grvGroupUOM.OptionsScrollAnnotations.ShowErrors = DevExpress.Utils.DefaultBoolean.True;
+            this.grvGroupUOM.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
+            this.grvGroupUOM.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
+            this.grvGroupUOM.OptionsView.RowAutoHeight = true;
+            this.grvGroupUOM.OptionsView.ShowGroupPanel = false;
+            this.grvGroupUOM.RowHeight = 1;
+            this.grvGroupUOM.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvChung_FocusedRowChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.grdGroupUOM;
+            this.gridView1.Name = "gridView1";
+            // 
             // btnThoat
             // 
             this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -231,66 +291,6 @@
             this.btnKhong.TabIndex = 5;
             this.btnKhong.Text = "btnKhong";
             this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
-            // 
-            // grdGroupUOM
-            // 
-            this.panelChung.SetColumn(this.grdGroupUOM, 0);
-            this.panelChung.SetColumnSpan(this.grdGroupUOM, 8);
-            this.grdGroupUOM.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdGroupUOM.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
-            this.grdGroupUOM.Location = new System.Drawing.Point(2, 70);
-            this.grdGroupUOM.MainView = this.grvGroupUOM;
-            this.grdGroupUOM.Margin = new System.Windows.Forms.Padding(2);
-            this.grdGroupUOM.Name = "grdGroupUOM";
-            this.panelChung.SetRow(this.grdGroupUOM, 4);
-            this.grdGroupUOM.Size = new System.Drawing.Size(959, 367);
-            this.grdGroupUOM.TabIndex = 7;
-            this.grdGroupUOM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grvGroupUOM,
-            this.gridView1});
-            // 
-            // grvGroupUOM
-            // 
-            this.grvGroupUOM.ColumnPanelRowHeight = 1;
-            this.grvGroupUOM.DetailHeight = 227;
-            this.grvGroupUOM.FixedLineWidth = 1;
-            this.grvGroupUOM.GridControl = this.grdGroupUOM;
-            this.grvGroupUOM.Name = "grvGroupUOM";
-            this.grvGroupUOM.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.grvGroupUOM.OptionsBehavior.AutoExpandAllGroups = true;
-            this.grvGroupUOM.OptionsCustomization.AllowRowSizing = true;
-            this.grvGroupUOM.OptionsFilter.ColumnFilterPopupMode = DevExpress.XtraGrid.Columns.ColumnFilterPopupMode.Excel;
-            this.grvGroupUOM.OptionsFind.FindDelay = 100;
-            this.grvGroupUOM.OptionsNavigation.EnterMoveNextColumn = true;
-            this.grvGroupUOM.OptionsPrint.AllowMultilineHeaders = true;
-            this.grvGroupUOM.OptionsScrollAnnotations.ShowCustomAnnotations = DevExpress.Utils.DefaultBoolean.True;
-            this.grvGroupUOM.OptionsScrollAnnotations.ShowErrors = DevExpress.Utils.DefaultBoolean.True;
-            this.grvGroupUOM.OptionsScrollAnnotations.ShowFocusedRow = DevExpress.Utils.DefaultBoolean.True;
-            this.grvGroupUOM.OptionsScrollAnnotations.ShowSelectedRows = DevExpress.Utils.DefaultBoolean.True;
-            this.grvGroupUOM.OptionsView.RowAutoHeight = true;
-            this.grvGroupUOM.OptionsView.ShowGroupPanel = false;
-            this.grvGroupUOM.RowHeight = 1;
-            this.grvGroupUOM.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grvChung_FocusedRowChanged);
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.grdGroupUOM;
-            this.gridView1.Name = "gridView1";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtSearch.Client = this.grdGroupUOM;
-            this.txtSearch.EnterMoveNextControl = true;
-            this.txtSearch.Location = new System.Drawing.Point(2, 7);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.txtSearch.Properties.Client = this.grdGroupUOM;
-            this.txtSearch.Properties.FindDelay = 100;
-            this.txtSearch.Size = new System.Drawing.Size(177, 20);
-            this.txtSearch.TabIndex = 3;
             // 
             // txtID
             // 
@@ -353,10 +353,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGroupName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNN)).EndInit();
             this.panelNN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdGroupUOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvGroupUOM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelChung)).EndInit();
             this.panelChung.ResumeLayout(false);

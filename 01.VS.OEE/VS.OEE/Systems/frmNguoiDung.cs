@@ -211,5 +211,25 @@ namespace VS.OEE
                 LoadData();
             }
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (iPQ != 1) return;
+                DataRow row = grvNguoiDung.GetDataRow(grvNguoiDung.FocusedRowHandle) as DataRow;
+                frmEditThemNguoiDung ctl = new frmEditThemNguoiDung(row, false);
+                ctl.Size = new System.Drawing.Size(675, 450);
+                ctl.StartPosition = FormStartPosition.CenterParent;
+                if (ctl.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
     }
 }

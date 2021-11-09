@@ -16,9 +16,10 @@ namespace VS.OEE
 {
     public partial class frmItemGroup : DevExpress.XtraEditors.XtraForm
     {
-        
-        public frmItemGroup()
+        static int iPQ = 1;
+        public frmItemGroup(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
             LockControl(true);
             Commons.Modules.ObjSystems.ThayDoiNN(this);
@@ -29,12 +30,11 @@ namespace VS.OEE
             {
                 LoadData(-1);
                 LoadText(false);
-                if (Modules.iPermission != 1)
+                if (iPQ != 1)
                 {
                     this.btnThem.Visible = false;
                     this.btnSua.Visible = false;
                     this.btnXoa.Visible = false;
-                    this.btnThoat.Visible = false;
                     this.btnGhi.Visible = false;
                     this.btnKhong.Visible = false;
                 }

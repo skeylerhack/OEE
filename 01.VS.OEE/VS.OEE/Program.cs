@@ -45,7 +45,7 @@ namespace VS.OEE
             try
             {
                 Application.Run(new frmMain());
-                //Application.Run(new frmThongTinChung(1));
+                //Application.Run(new ucDeviceCause(1));
             }
             catch (Exception ex)
             {

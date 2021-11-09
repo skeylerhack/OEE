@@ -41,7 +41,7 @@ namespace VS.OEE
         {
             LoadCbo();
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)

@@ -13,8 +13,10 @@ namespace VS.OEE
 {
     public partial class frmTarget : DevExpress.XtraEditors.XtraForm
     {
-        public frmTarget()
+        static int iPQ =1;
+        public frmTarget(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
         }
         int inam = 0;
@@ -32,7 +34,7 @@ namespace VS.OEE
         }
         private void frmTarget_Load(object sender, EventArgs e)
         {
-            if (Modules.iPermission != 1)
+            if (iPQ != 1)
             {
                 this.btnCopy.Visible = false;
                 this.btnSua.Visible = false;
@@ -40,7 +42,6 @@ namespace VS.OEE
                 this.btnLayMay.Visible = false;
                 this.btnGhi.Visible = false;
                 this.btnKhong.Visible = false;
-                btnThoat.Visible = true;
             }
             else
             {

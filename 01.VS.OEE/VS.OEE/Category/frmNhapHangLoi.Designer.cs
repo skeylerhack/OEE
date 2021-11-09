@@ -88,6 +88,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tablePanel1.SetColumn(this.panelControl1, 0);
             this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
             this.panelControl1.Controls.Add(this.btnThoat);

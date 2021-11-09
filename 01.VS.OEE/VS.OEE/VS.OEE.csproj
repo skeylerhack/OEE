@@ -142,6 +142,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\frmBoPhanChiuPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\frmBoPhanChiuPhi.Designer.cs">
+      <DependentUpon>frmBoPhanChiuPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class\ClsMain.cs" />
     <Compile Include="formChoose\frmChoosePro.cs">
       <SubType>Form</SubType>
@@ -233,6 +239,12 @@
     <Compile Include="formEdit\frmEditNhomMay.Designer.cs">
       <DependentUpon>frmEditNhomMay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\XtraUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\XtraUserControl1.Designer.cs">
+      <DependentUpon>XtraUserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Systems\frmEditThemNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,12 +256,6 @@
     </Compile>
     <Compile Include="Systems\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Category\frmNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Category\frmNhanVien.Designer.cs">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Category\frmNhapHangLoi.cs">
       <SubType>Form</SubType>
@@ -298,12 +304,6 @@
     </Compile>
     <Compile Include="Category\frmQuanLyNhanVienView.Designer.cs">
       <DependentUpon>frmQuanLyNhanVienView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Category\frmThongTinThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Category\frmThongTinThietBi.Designer.cs">
-      <DependentUpon>frmThongTinThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="formEdit\frmView.cs">
       <SubType>Form</SubType>
@@ -408,11 +408,17 @@
     <Compile Include="Systems\frmNhomNguoiDung.Designer.cs">
       <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="UAC\ucDMTBi.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="UAC\frmThongSoVanHanh.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UAC\ucDMTBi.Designer.cs">
-      <DependentUpon>ucDMTBi.cs</DependentUpon>
+    <Compile Include="UAC\frmThongSoVanHanh.Designer.cs">
+      <DependentUpon>frmThongSoVanHanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UAC\frmThongTinThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UAC\frmThongTinThietBi.Designer.cs">
+      <DependentUpon>frmThongTinThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="UAC\ucDownTimeCause.cs">
       <SubType>Form</SubType>
@@ -438,11 +444,11 @@
     <Compile Include="UAC\ucProductOrder.Designer.cs">
       <DependentUpon>ucProductOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="UAC\ucQuanLyNhanVien.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="UAC\frmQuanlynhanvien.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UAC\ucQuanLyNhanVien.Designer.cs">
-      <DependentUpon>ucQuanLyNhanVien.cs</DependentUpon>
+    <Compile Include="UAC\frmQuanlynhanvien.Designer.cs">
+      <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="UAC\ucTarget.cs">
       <SubType>Form</SubType>
@@ -456,11 +462,11 @@
     <Compile Include="UAC\ucUOMGroup.Designer.cs">
       <DependentUpon>ucUOMGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UAC\ucItemMay.cs">
+    <Compile Include="UAC\frmItemMay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UAC\ucItemMay.Designer.cs">
-      <DependentUpon>ucItemMay.cs</DependentUpon>
+    <Compile Include="UAC\frmItemMay.Designer.cs">
+      <DependentUpon>frmItemMay.cs</DependentUpon>
     </Compile>
     <Compile Include="UAC\ucUOM.cs">
       <SubType>Form</SubType>
@@ -504,6 +510,9 @@
     <Compile Include="Form\XtraForm1.Designer.cs">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Category\frmBoPhanChiuPhi.resx">
+      <DependentUpon>frmBoPhanChiuPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formChoose\frmChoosePro.resx">
       <DependentUpon>frmChoosePro.cs</DependentUpon>
     </EmbeddedResource>
@@ -556,9 +565,6 @@
     <EmbeddedResource Include="Systems\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Category\frmNhanVien.resx">
-      <DependentUpon>frmNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Category\frmNhapHangLoi.resx">
       <DependentUpon>frmNhapHangLoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -582,9 +588,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Category\frmQuanLyNhanVienView.resx">
       <DependentUpon>frmQuanLyNhanVienView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Category\frmThongTinThietBi.resx">
-      <DependentUpon>frmThongTinThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEdit\frmView.resx">
       <DependentUpon>frmView.cs</DependentUpon>
@@ -640,8 +643,12 @@
     <EmbeddedResource Include="Systems\frmNhomNguoiDung.resx">
       <DependentUpon>frmNhomNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UAC\ucDMTBi.resx">
-      <DependentUpon>ucDMTBi.cs</DependentUpon>
+    <EmbeddedResource Include="UAC\frmThongSoVanHanh.resx">
+      <DependentUpon>frmThongSoVanHanh.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UAC\frmThongTinThietBi.resx">
+      <DependentUpon>frmThongTinThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UAC\ucDownTimeCause.resx">
       <DependentUpon>ucDownTimeCause.cs</DependentUpon>
@@ -655,8 +662,8 @@
     <EmbeddedResource Include="UAC\ucProductOrder.resx">
       <DependentUpon>ucProductOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UAC\ucQuanLyNhanVien.resx">
-      <DependentUpon>ucQuanLyNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="UAC\frmQuanlynhanvien.resx">
+      <DependentUpon>frmQuanlynhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UAC\ucTarget.resx">
       <DependentUpon>ucTarget.cs</DependentUpon>
@@ -664,8 +671,8 @@
     <EmbeddedResource Include="UAC\ucUOMGroup.resx">
       <DependentUpon>ucUOMGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UAC\ucItemMay.resx">
-      <DependentUpon>ucItemMay.cs</DependentUpon>
+    <EmbeddedResource Include="UAC\frmItemMay.resx">
+      <DependentUpon>frmItemMay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UAC\ucUOM.resx">
       <DependentUpon>ucUOM.cs</DependentUpon>
@@ -855,7 +862,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OEE.ico" />
-    <None Include="Resources\OEE.ico" />
+    <None Include="Resources\back_ground.jpg" />
+    <Content Include="Resources\OEE.ico" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

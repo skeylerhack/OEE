@@ -157,6 +157,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tablePanel1.SetColumn(this.panelControl1, 0);
             this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
             this.panelControl1.Controls.Add(this.btnThoat);
@@ -542,6 +543,7 @@
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.txtTim.Properties.Client = this.TreeList;
+            this.txtTim.Properties.FindDelay = 100;
             this.tablePanel2.SetRow(this.txtTim, 1);
             this.txtTim.Size = new System.Drawing.Size(300, 20);
             this.txtTim.TabIndex = 1;

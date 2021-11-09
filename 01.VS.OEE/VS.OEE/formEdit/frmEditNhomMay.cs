@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Reflection;
@@ -43,7 +39,7 @@ namespace VS.OEE
         {
             LoadCbo();
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -105,19 +101,6 @@ namespace VS.OEE
                 txtMS_NHOM_MAY.Text = ""; txtTEN_NHOM_MAY.Text = ""; txtTEN_NHOM_MAY_ANH.Text = ""; txtTEN_NHOM_MAY_HOA.Text = ""; txtGHI_CHU.Text = "";
                 XtraMessageBox.Show(ex.Message);
             }
-        }
-
-        public void LoadNN()
-        {
-            lblMS_LOAI_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMS_LOAI_MAY");
-            lblMS_NHOM_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMS_NHOM_MAY");
-            lblTEN_NHOM_MAY.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_NHOM_MAY");
-            lblTEN_NHOM_MAY_ANH.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_NHOM_MAY_ANH");
-            lblTEN_NHOM_MAY_HOA.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_NHOM_MAY_HOA");
-            lblGHI_CHU.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblGHI_CHU");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

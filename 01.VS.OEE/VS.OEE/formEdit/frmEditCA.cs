@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Reflection;
@@ -39,7 +33,7 @@ namespace VS.OEE
         private void frmEditCA_Load(object sender, EventArgs e)
         {
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -88,19 +82,7 @@ namespace VS.OEE
         #endregion
 
         #region Function
-        public void LoadNN()
-        {
-            lblCA.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblCA");
-            lblCA_ANH.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblCA_ANH");
-            lblCA_HOA.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblCA_HOA");
-            lblTU_GIO.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTU_GIO");
-            lblDEN_GIO.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDEN_GIO");
-            lblTU_PHUT.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTU_PHUT");
-            lblDEN_PHUT.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDEN_PHUT");
-            chkCA_DEM.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "chkCA_DEM");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
+       
 
         private void LoadText()
         {

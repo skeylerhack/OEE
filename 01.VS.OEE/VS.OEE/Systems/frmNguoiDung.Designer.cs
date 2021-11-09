@@ -42,6 +42,7 @@
             this.tsmiKick = new System.Windows.Forms.ToolStripMenuItem();
             this.grvNguoiDung = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cboNhom = new System.Windows.Forms.ComboBox();
+            this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -88,8 +89,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tablePanel1.SetColumn(this.panelControl1, 0);
             this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnSua);
             this.panelControl1.Controls.Add(this.btnXoa);
             this.panelControl1.Controls.Add(this.btnThem);
             this.panelControl1.Controls.Add(this.btnThoat);
@@ -114,7 +117,7 @@
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.Location = new System.Drawing.Point(417, 1);
+            this.btnThem.Location = new System.Drawing.Point(336, 1);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 26);
@@ -207,6 +210,16 @@
             this.cboNhom.TabIndex = 3;
             this.cboNhom.SelectedIndexChanged += new System.EventHandler(this.cboNhom_SelectedIndexChanged);
             // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.Location = new System.Drawing.Point(417, 1);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(80, 26);
+            this.btnSua.TabIndex = 6;
+            this.btnSua.Text = "btnSua";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // frmNguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,5 +258,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grvNguoiDung;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl lblNhom;
+        private DevExpress.XtraEditors.SimpleButton btnSua;
     }
 }

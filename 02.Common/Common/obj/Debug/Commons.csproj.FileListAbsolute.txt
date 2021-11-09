@@ -1749,8 +1749,6 @@ D:\Smartrack\02.Common\Common\obj\Debug\Commons.csproj.CopyComplete
 D:\Smartrack\02.Common\Common\obj\Debug\Commons.dll
 D:\Smartrack\02.Common\Common\obj\Debug\Commons.pdb
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.BonusSkins.v20.1.dll
-D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.CodeParser.v20.1.dll
-D:\01.SmarTrack\02.Common\Common\bin\Debug\ru\DevExpress.DataAccess.v20.1.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\Commons.dll.config
 D:\01.SmarTrack\02.Common\Common\bin\Debug\Commons.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\Commons.pdb
@@ -1776,6 +1774,7 @@ D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.Xpo.v20.1.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.DataAccess.v20.1.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.PivotGrid.v20.1.Core.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.XtraGauges.v20.1.Core.dll
+D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.CodeParser.v20.1.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.Office.v20.1.Core.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.Utils.v9.2.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\DevExpress.XtraEditors.v9.2.dll
@@ -1885,6 +1884,7 @@ D:\01.SmarTrack\02.Common\Common\bin\Debug\ru\DevExpress.Xpo.v20.1.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\de\DevExpress.DataAccess.v20.1.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\es\DevExpress.DataAccess.v20.1.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\ja\DevExpress.DataAccess.v20.1.resources.dll
+D:\01.SmarTrack\02.Common\Common\bin\Debug\ru\DevExpress.DataAccess.v20.1.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\de\DevExpress.PivotGrid.v20.1.Core.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\es\DevExpress.PivotGrid.v20.1.Core.resources.dll
 D:\01.SmarTrack\02.Common\Common\bin\Debug\ja\DevExpress.PivotGrid.v20.1.Core.resources.dll

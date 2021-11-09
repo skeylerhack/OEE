@@ -57,9 +57,9 @@ namespace VS.OEE
             this.cboNhom = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKhongGhi = new DevExpress.XtraEditors.SimpleButton();
             this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKhongGhi = new DevExpress.XtraEditors.SimpleButton();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
@@ -381,10 +381,10 @@ namespace VS.OEE
             // 
             this.tablePanel1.SetColumn(this.panel1, 0);
             this.tablePanel1.SetColumnSpan(this.panel1, 4);
-            this.panel1.Controls.Add(this.btnGhi);
-            this.panel1.Controls.Add(this.btnKhongGhi);
-            this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnSua);
+            this.panel1.Controls.Add(this.btnKhongGhi);
+            this.panel1.Controls.Add(this.btnGhi);
+            this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Location = new System.Drawing.Point(2, 349);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
@@ -395,7 +395,7 @@ namespace VS.OEE
             // btnGhi
             // 
             this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGhi.Location = new System.Drawing.Point(816, 3);
+            this.btnGhi.Location = new System.Drawing.Point(818, 3);
             this.btnGhi.Margin = new System.Windows.Forms.Padding(2);
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.Size = new System.Drawing.Size(80, 26);
@@ -403,6 +403,28 @@ namespace VS.OEE
             this.btnGhi.Text = "btnGhi";
             this.btnGhi.Visible = false;
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.Location = new System.Drawing.Point(899, 3);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(80, 26);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "btnThoat";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.Location = new System.Drawing.Point(818, 3);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(80, 26);
+            this.btnSua.TabIndex = 6;
+            this.btnSua.Text = "btnSua";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnKhongGhi
             // 
@@ -416,27 +438,6 @@ namespace VS.OEE
             this.btnKhongGhi.Text = "btnKhongGhi";
             this.btnKhongGhi.Visible = false;
             this.btnKhongGhi.Click += new System.EventHandler(this.btnKhongGhi_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(898, 3);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(80, 26);
-            this.btnThoat.TabIndex = 5;
-            this.btnThoat.Text = "btnThoat";
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.Location = new System.Drawing.Point(816, 3);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(80, 26);
-            this.btnSua.TabIndex = 6;
-            this.btnSua.Text = "btnSua";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // gridView4
             // 

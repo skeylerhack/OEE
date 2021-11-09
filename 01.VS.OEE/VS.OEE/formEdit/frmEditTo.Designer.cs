@@ -32,8 +32,9 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.txtTEN_TO = new DevExpress.XtraEditors.TextEdit();
             this.cboMS_TO = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -43,17 +44,16 @@
             this.lblMS_TO = new DevExpress.XtraEditors.LabelControl();
             this.lblMS_DON_VI = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN_TO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMS_TO.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMS_DON_VI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -82,15 +82,18 @@
             this.tablePanel1.Size = new System.Drawing.Size(594, 368);
             this.tablePanel1.TabIndex = 0;
             // 
-            // btnThoat
+            // panelControl1
             // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(497, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(80, 26);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "btnThoat";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnGhi);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Location = new System.Drawing.Point(8, 334);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 3);
+            this.panelControl1.Size = new System.Drawing.Size(578, 26);
+            this.panelControl1.TabIndex = 25;
             // 
             // btnGhi
             // 
@@ -101,6 +104,16 @@
             this.btnGhi.TabIndex = 1;
             this.btnGhi.Text = "btnGhi";
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.Location = new System.Drawing.Point(497, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(80, 26);
+            this.btnThoat.TabIndex = 0;
+            this.btnThoat.Text = "btnThoat";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // txtTEN_TO
             // 
@@ -199,18 +212,6 @@
             this.lblMS_DON_VI.TabIndex = 0;
             this.lblMS_DON_VI.Text = "lblMS_DON_VI";
             // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
-            this.panelControl1.Controls.Add(this.btnGhi);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Location = new System.Drawing.Point(8, 334);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 3);
-            this.panelControl1.Size = new System.Drawing.Size(578, 26);
-            this.panelControl1.TabIndex = 25;
-            // 
             // frmEditTo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,14 +225,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTEN_TO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMS_TO.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboMS_DON_VI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

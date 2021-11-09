@@ -55,7 +55,6 @@
             this.lblTEN_HE_THONG_ANH = new DevExpress.XtraEditors.LabelControl();
             this.lblTEN_HE_THONG = new DevExpress.XtraEditors.LabelControl();
             this.lblSTT = new DevExpress.XtraEditors.LabelControl();
-            this.lblNO_LINE = new DevExpress.XtraEditors.LabelControl();
             this.lblMA_HE_THONG = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -120,6 +119,7 @@
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
             this.txtTim.Properties.Client = this.TreeList;
+            this.txtTim.Properties.FindDelay = 100;
             this.tablePanel1.SetRow(this.txtTim, 1);
             this.txtTim.Size = new System.Drawing.Size(306, 20);
             this.txtTim.TabIndex = 1;
@@ -161,7 +161,6 @@
             this.tablePanel2.Controls.Add(this.lblTEN_HE_THONG_ANH);
             this.tablePanel2.Controls.Add(this.lblTEN_HE_THONG);
             this.tablePanel2.Controls.Add(this.lblSTT);
-            this.tablePanel2.Controls.Add(this.lblNO_LINE);
             this.tablePanel2.Controls.Add(this.lblMA_HE_THONG);
             this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel2.Location = new System.Drawing.Point(0, 0);
@@ -183,6 +182,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tablePanel2.SetColumn(this.panelControl1, 0);
             this.tablePanel2.SetColumnSpan(this.panelControl1, 6);
             this.panelControl1.Controls.Add(this.btnThoat);
@@ -285,13 +285,14 @@
             // 
             // chkNO_LINE
             // 
-            this.tablePanel2.SetColumn(this.chkNO_LINE, 3);
+            this.tablePanel2.SetColumn(this.chkNO_LINE, 2);
+            this.tablePanel2.SetColumnSpan(this.chkNO_LINE, 2);
             this.chkNO_LINE.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkNO_LINE.Location = new System.Drawing.Point(383, 8);
+            this.chkNO_LINE.Location = new System.Drawing.Point(309, 8);
             this.chkNO_LINE.Name = "chkNO_LINE";
-            this.chkNO_LINE.Properties.Caption = "";
+            this.chkNO_LINE.Properties.Caption = "chkNO_LINE";
             this.tablePanel2.SetRow(this.chkNO_LINE, 0);
-            this.chkNO_LINE.Size = new System.Drawing.Size(31, 20);
+            this.chkNO_LINE.Size = new System.Drawing.Size(105, 20);
             this.chkNO_LINE.TabIndex = 16;
             // 
             // txtTEN_HE_THONG_HOA
@@ -418,17 +419,6 @@
             this.lblSTT.TabIndex = 2;
             this.lblSTT.Text = "lblSTT";
             // 
-            // lblNO_LINE
-            // 
-            this.tablePanel2.SetColumn(this.lblNO_LINE, 2);
-            this.lblNO_LINE.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNO_LINE.Location = new System.Drawing.Point(309, 8);
-            this.lblNO_LINE.Name = "lblNO_LINE";
-            this.tablePanel2.SetRow(this.lblNO_LINE, 0);
-            this.lblNO_LINE.Size = new System.Drawing.Size(68, 20);
-            this.lblNO_LINE.TabIndex = 1;
-            this.lblNO_LINE.Text = "lblNO_LINE";
-            // 
             // lblMA_HE_THONG
             // 
             this.tablePanel2.SetColumn(this.lblMA_HE_THONG, 0);
@@ -489,7 +479,6 @@
         private DevExpress.XtraEditors.LabelControl lblTEN_HE_THONG_ANH;
         private DevExpress.XtraEditors.LabelControl lblTEN_HE_THONG;
         private DevExpress.XtraEditors.LabelControl lblSTT;
-        private DevExpress.XtraEditors.LabelControl lblNO_LINE;
         private DevExpress.XtraEditors.LabelControl lblMA_HE_THONG;
         private DevExpress.XtraEditors.MemoEdit txtGHI_CHU;
         private DevExpress.XtraEditors.CheckEdit chkNO_LINE;

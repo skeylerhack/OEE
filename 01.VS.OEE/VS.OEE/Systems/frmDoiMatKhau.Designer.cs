@@ -40,11 +40,11 @@
             this.txtPASSWORD_NEW_RE = new DevExpress.XtraEditors.TextEdit();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblUSER_NAME = new DevExpress.XtraEditors.LabelControl();
             this.lblPASSWORD_OLD = new DevExpress.XtraEditors.LabelControl();
             this.lblPASSWORD_NEW = new DevExpress.XtraEditors.LabelControl();
             this.lblPASSWORD_NEW_RE = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtUSER_NAME.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPASSWORD_OLD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPASSWORD_NEW.Properties)).BeginInit();
@@ -164,6 +164,19 @@
             this.tablePanel1.Size = new System.Drawing.Size(348, 155);
             this.tablePanel1.TabIndex = 13;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 2);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Controls.Add(this.btnLuu);
+            this.panelControl1.Location = new System.Drawing.Point(3, 123);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 6);
+            this.panelControl1.Size = new System.Drawing.Size(342, 29);
+            this.panelControl1.TabIndex = 5;
+            // 
             // lblUSER_NAME
             // 
             this.tablePanel1.SetColumn(this.lblUSER_NAME, 0);
@@ -203,18 +216,6 @@
             this.lblPASSWORD_NEW_RE.Size = new System.Drawing.Size(121, 13);
             this.lblPASSWORD_NEW_RE.TabIndex = 0;
             this.lblPASSWORD_NEW_RE.Text = "lblPASSWORD_NEW_RE";
-            // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 2);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Controls.Add(this.btnLuu);
-            this.panelControl1.Location = new System.Drawing.Point(3, 123);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 6);
-            this.panelControl1.Size = new System.Drawing.Size(342, 29);
-            this.panelControl1.TabIndex = 5;
             // 
             // frmDoiMatKhau
             // 

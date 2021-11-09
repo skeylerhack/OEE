@@ -32,10 +32,11 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.cboID_DG = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGhi = new DevExpress.XtraEditors.SimpleButton();
             this.txtNote = new DevExpress.XtraEditors.MemoEdit();
             this.txtTHU_TU = new DevExpress.XtraEditors.SpinEdit();
             this.txtDefectName_C = new DevExpress.XtraEditors.TextEdit();
@@ -48,9 +49,10 @@
             this.lblTHU_TU = new DevExpress.XtraEditors.LabelControl();
             this.lblID_DG = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cboID_DG.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
@@ -59,8 +61,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDefectName_E.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDefectName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanel1
@@ -100,6 +100,39 @@
             this.tablePanel1.Size = new System.Drawing.Size(594, 368);
             this.tablePanel1.TabIndex = 0;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnGhi);
+            this.panelControl1.Controls.Add(this.btnThoat);
+            this.panelControl1.Location = new System.Drawing.Point(8, 331);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 8);
+            this.panelControl1.Size = new System.Drawing.Size(578, 29);
+            this.panelControl1.TabIndex = 14;
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGhi.Location = new System.Drawing.Point(417, 1);
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(80, 26);
+            this.btnGhi.TabIndex = 4;
+            this.btnGhi.Text = "btnGhi";
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.Location = new System.Drawing.Point(498, 1);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(80, 26);
+            this.btnThoat.TabIndex = 3;
+            this.btnThoat.Text = "btnThoat";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // cboID_DG
             // 
             this.tablePanel1.SetColumn(this.cboID_DG, 1);
@@ -124,26 +157,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.Location = new System.Drawing.Point(498, 1);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(80, 26);
-            this.btnThoat.TabIndex = 3;
-            this.btnThoat.Text = "btnThoat";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGhi.Location = new System.Drawing.Point(417, 1);
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.Size = new System.Drawing.Size(80, 26);
-            this.btnGhi.TabIndex = 4;
-            this.btnGhi.Text = "btnGhi";
-            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // txtNote
             // 
@@ -282,18 +295,6 @@
             this.lblID_DG.TabIndex = 0;
             this.lblID_DG.Text = "lblID_DG";
             // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
-            this.panelControl1.Controls.Add(this.btnGhi);
-            this.panelControl1.Controls.Add(this.btnThoat);
-            this.panelControl1.Location = new System.Drawing.Point(8, 331);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 8);
-            this.panelControl1.Size = new System.Drawing.Size(578, 29);
-            this.panelControl1.TabIndex = 14;
-            // 
             // frmEditLoaiLoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +308,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cboID_DG.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
@@ -315,8 +318,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDefectName_E.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDefectName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

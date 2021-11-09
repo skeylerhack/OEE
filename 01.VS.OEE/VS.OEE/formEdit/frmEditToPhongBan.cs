@@ -41,7 +41,7 @@ namespace VS.OEE
         {
             LoadCbo();
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -94,18 +94,7 @@ namespace VS.OEE
             Commons.Modules.ObjSystems.MLoadSearchLookUpEdit(cboMS_DON_VI, dt, "MS_DON_VI", "TEN_NGAN", this.Name);
             cboMS_DON_VI.Properties.PopulateViewColumns();
             cboMS_DON_VI.Properties.View.Columns["MS_DON_VI"].Visible = false;
-
         }
-        public void LoadNN()
-        {
-            lblMS_DON_VI.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblMS_DON_VI");
-            lblSTT_TO.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblSTT_TO");
-            lblTEN_TO.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTEN_TO");
-            lblTO_TRUONG.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblTO_TRUONG");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
-
         private void LoadText()
         {
             try

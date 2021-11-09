@@ -150,8 +150,15 @@ namespace VS.OEE
 
         private void TreeList_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
-            iMS_HE_THONG = Convert.ToInt32(TreeList.FocusedNode["MS_HE_THONG"]);
-            LoadText();
+            try
+            {
+
+                iMS_HE_THONG = Convert.ToInt32(TreeList.FocusedNode["MS_HE_THONG"]);
+                LoadText();
+            }
+            catch
+            {
+            }
         }
         #endregion
 
@@ -273,7 +280,7 @@ namespace VS.OEE
         {
             if (iMS_HE_THONG == -1)
             {
-                txtMA_HE_THONG.ReadOnly = false; 
+                txtMA_HE_THONG.ReadOnly = false;
             }
 
             if (iMS_HE_THONG != -1)

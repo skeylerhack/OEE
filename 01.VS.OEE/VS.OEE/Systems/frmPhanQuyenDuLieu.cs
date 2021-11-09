@@ -60,10 +60,14 @@ namespace VS.OEE
             if (Commons.Modules.sPS == "0Load") return;
             DataTable dtTmp = new DataTable();
             dtTmp.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, "GetNHOM_NHA_XUONG", GroupID));
-            dtTmp.Columns["MS_N_XUONG"].ReadOnly = true;
-            dtTmp.Columns["TEN_N_XUONG"].ReadOnly = true;
-            dtTmp.Columns["CHON"].ReadOnly = false;
-            Commons.Modules.ObjSystems.MLoadXtraGrid(grdDiaDiem, grvDiaDiem, dtTmp, true, false, true, true, true, Name);
+            for (int i = 0; i < dtTmp.Columns.Count; i++)
+            {
+                if (i == 0)
+                    dtTmp.Columns[i].ReadOnly = false;
+                else
+                    dtTmp.Columns[i].ReadOnly = false;
+            }
+            Commons.Modules.ObjSystems.MLoadXtraGrid(grdDiaDiem, grvDiaDiem, dtTmp, false, false, true, true, true, Name);
             grvDiaDiem.Columns["TINH"].Visible = false;
             grvDiaDiem.Columns["QUAN"].Visible = false;
             grvDiaDiem.Columns["DIA_CHI"].Visible = false;
@@ -73,7 +77,14 @@ namespace VS.OEE
 
             dtTmp = new DataTable();
             dtTmp.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, "GetNHOM_HE_THONG", GroupID));
-            Commons.Modules.ObjSystems.MLoadXtraGrid(grdDayChuyen, grvDayChuyen, dtTmp, true, false, true, true, true, Name);
+            for (int i = 0; i < dtTmp.Columns.Count; i++)
+            {
+                if(i ==0)
+                    dtTmp.Columns[i].ReadOnly = false;
+                else
+                    dtTmp.Columns[i].ReadOnly = false;
+            }
+            Commons.Modules.ObjSystems.MLoadXtraGrid(grdDayChuyen, grvDayChuyen, dtTmp, false, false, true, true, true, Name);
             grvDayChuyen.Columns["IS_UPDATE"].Visible = false;
             grvDayChuyen.Columns["GROUP_ID"].Visible = false;
 
@@ -99,15 +110,27 @@ namespace VS.OEE
             if (Commons.Modules.sPS == "0Load") return;
             DataTable dtTmp = new DataTable();
             dtTmp.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, "GetLOAI_MAY_QUYEN", GroupID));
-            dtTmp.Columns["CHON"].ReadOnly = false;
-            Commons.Modules.ObjSystems.MLoadXtraGrid(grdLoaiMay, grvLoaiMay, dtTmp, true, false, true, true, true, Name);
+            for (int i = 0; i < dtTmp.Columns.Count; i++)
+            {
+                if (i == 0)
+                    dtTmp.Columns[i].ReadOnly = false;
+                else
+                    dtTmp.Columns[i].ReadOnly = false;
+            }
+            Commons.Modules.ObjSystems.MLoadXtraGrid(grdLoaiMay, grvLoaiMay, dtTmp, false, false, true, true, true, Name);
             grvLoaiMay.Columns["IS_UPDATE"].Visible = false;
             grvLoaiMay.Columns["GROUP_ID"].Visible = false;
 
             dtTmp = new DataTable();
             dtTmp.Load(SqlHelper.ExecuteReader(Commons.IConnections.CNStr, "GetNHOM_BO_PHAN_CHIU_PHI_QUYEN", GroupID));
-            dtTmp.Columns["CHON"].ReadOnly = false;
-            Commons.Modules.ObjSystems.MLoadXtraGrid(grdBPCP, grvBPCP, dtTmp, true, false, true, true, true, Name);
+            for (int i = 0; i < dtTmp.Columns.Count; i++)
+            {
+                if (i == 0)
+                    dtTmp.Columns[i].ReadOnly = false;
+                else
+                    dtTmp.Columns[i].ReadOnly = false;
+            }
+            Commons.Modules.ObjSystems.MLoadXtraGrid(grdBPCP, grvBPCP, dtTmp, false, false, true, true, true, Name);
             grvBPCP.Columns["TEN_DON_VI"].Visible = false;
             grvBPCP.Columns["IS_UPDATE"].Visible = false;
             grvBPCP.Columns["GROUP_ID"].Visible = false;
@@ -339,6 +362,11 @@ namespace VS.OEE
             {
             }
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

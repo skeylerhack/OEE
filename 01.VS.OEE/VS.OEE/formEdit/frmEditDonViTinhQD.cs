@@ -42,7 +42,7 @@ namespace VS.OEE
         {
             LoadCbo();
             if (!AddEdit) LoadText();
-            LoadNN();
+            Commons.Modules.ObjSystems.ThayDoiNN(this);
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -74,14 +74,6 @@ namespace VS.OEE
         #endregion
 
         #region Function
-        public void LoadNN()
-        {
-            lblDVT.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDVT");
-            lblDVT1.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblDVT1");
-            lblHE_SO_QD.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "lblHE_SO_QD");
-            btnGhi.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnGhi");
-            btnThoat.Text = Commons.Modules.ObjLanguages.GetLanguage(this.Name, "btnThoat");
-        }
 
         private void LoadCbo()
         {

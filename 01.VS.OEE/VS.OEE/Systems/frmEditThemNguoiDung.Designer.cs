@@ -49,13 +49,13 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.lblID_NHOM = new DevExpress.XtraEditors.LabelControl();
             this.lblUSER_NAME = new DevExpress.XtraEditors.LabelControl();
             this.lblPASSWORD = new DevExpress.XtraEditors.LabelControl();
             this.lblFULL_NAME = new DevExpress.XtraEditors.LabelControl();
             this.lblUSER_MAIL = new DevExpress.XtraEditors.LabelControl();
             this.lblDESCRIPTION = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cboID_NHOM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUSER_MAIL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPASSWORD.Properties)).BeginInit();
@@ -211,6 +211,19 @@
             this.tablePanel1.Size = new System.Drawing.Size(582, 309);
             this.tablePanel1.TabIndex = 1;
             // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.tablePanel1.SetColumn(this.panelControl1, 0);
+            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
+            this.panelControl1.Controls.Add(this.btnKhong);
+            this.panelControl1.Controls.Add(this.btnGhi);
+            this.panelControl1.Location = new System.Drawing.Point(3, 277);
+            this.panelControl1.Name = "panelControl1";
+            this.tablePanel1.SetRow(this.panelControl1, 7);
+            this.panelControl1.Size = new System.Drawing.Size(576, 29);
+            this.panelControl1.TabIndex = 17;
+            // 
             // lblID_NHOM
             // 
             this.tablePanel1.SetColumn(this.lblID_NHOM, 0);
@@ -270,18 +283,6 @@
             this.lblDESCRIPTION.Size = new System.Drawing.Size(82, 13);
             this.lblDESCRIPTION.TabIndex = 16;
             this.lblDESCRIPTION.Text = "lblDESCRIPTION";
-            // 
-            // panelControl1
-            // 
-            this.tablePanel1.SetColumn(this.panelControl1, 0);
-            this.tablePanel1.SetColumnSpan(this.panelControl1, 4);
-            this.panelControl1.Controls.Add(this.btnKhong);
-            this.panelControl1.Controls.Add(this.btnGhi);
-            this.panelControl1.Location = new System.Drawing.Point(3, 277);
-            this.panelControl1.Name = "panelControl1";
-            this.tablePanel1.SetRow(this.panelControl1, 7);
-            this.panelControl1.Size = new System.Drawing.Size(576, 29);
-            this.panelControl1.TabIndex = 17;
             // 
             // frmEditThemNguoiDung
             // 

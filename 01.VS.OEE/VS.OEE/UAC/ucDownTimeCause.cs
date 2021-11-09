@@ -16,9 +16,11 @@ namespace VS.OEE
 {
     public partial class ucDownTimeCause : DevExpress.XtraEditors.XtraForm
     {
-        
-        public ucDownTimeCause()
+
+        static int iPQ = 1;
+        public ucDownTimeCause(int PQ)
         {
+            iPQ = PQ;
             InitializeComponent();
             LockControl(true);
             Commons.Modules.ObjSystems.ThayDoiNN(this);
@@ -31,12 +33,11 @@ namespace VS.OEE
                 Commons.Modules.ObjSystems.MLoadLookUpEdit(cboPlanned, Commons.Modules.ObjSystems.DataPlanned(false),  "ID","StopTypeName", Commons.Modules.ObjLanguages.GetLanguage(this.Name, "StopTypeName"));
                 LoadData(-1);
                 LoadText(false);
-                if (Modules.iPermission != 1)
+                if (iPQ != 1)
                 {
                     this.btnThem.Visible = false;
                     this.btnSua.Visible = false;
                     this.btnXoa.Visible = false;
-                    this.btnThoat.Visible = false;
                     this.btnGhi.Visible = false;
                     this.btnKhong.Visible = false;
                 }

@@ -19,6 +19,7 @@ namespace VS.OEE
         DocumentManager manager;
         private void frmMain_Load(object sender, EventArgs e)
         {
+
             frmDangNhap frm = new frmDangNhap(0);
             if (frm.ShowDialog() == DialogResult.Cancel)
             {
@@ -133,8 +134,8 @@ namespace VS.OEE
         {
             #region Kiem form active
             FormCollection frmOpen = Application.OpenForms;
-            List<Form> ListForm = new List<Form>();
-            foreach (Form frmO in frmOpen)
+            List<XtraForm> ListForm = new List<XtraForm>();
+            foreach (XtraForm frmO in frmOpen)
             {
                 if (frmO.Name != "frmMain" && frmO.Name == e.Item.Name.Replace("mnuOEE", "frm"))
                 {
@@ -178,8 +179,8 @@ namespace VS.OEE
                 case "ShowLenhSanXuat": { ShowLenhSanXuat(); return; }
                 case "ShowSoLieuLoi": { SoLieuLoi(); return; }
                 case "ShowTienDoSX": { ShowTienDoSX(); return; }
-                case "ShowThoiGianNgungMay": { ShowThoiGianNgungMay(); return; }
-                case "ShowThoiGianChayMay": { ShowThoiGianChayMay(); return; }
+                //case "ShowThoiGianNgungMay": { ShowThoiGianNgungMay(); return; }
+                //case "ShowThoiGianChayMay": { ShowThoiGianChayMay(); return; }
                 case "ShowNhanVien": { ShowNhanVien(); return; }
                 case "ShowThoiGiamLamViec": { ShowThoiGiamLamViec(); return; }
                 case "ShowCaLamViec": { ShowCaLamViec(); return; }
@@ -192,6 +193,10 @@ namespace VS.OEE
                 case "ShowBoPhanChiuPhi": { ShowBoPhanChiuPhi(); return; }
                 case "ShowCa": { ShowCa(); return; }
                 case "ShowDNTGNM":{ ShowDinhNghiaTHNM(); return; }
+                case "ShowThongSoVanHanh": { ShowThongSoVanHanh(); return; }
+                case "ShowNguyenNhanNM": { ShowNguyenNhanNM(); return; }
+                case "ShowLoaiNM": { ShowLoaiNM(); return; }
+                    
                 default:
                     {
                         break;
@@ -205,7 +210,7 @@ namespace VS.OEE
                 XtraForm ctl = new XtraForm();
                 if (e.Item.Tag.ToString() == "") return;
                 sSql = "1";
-                Form fc = Application.OpenForms[e.Item.Name.Replace("mnu", "frm")];
+                XtraForm fc = (XtraForm)Application.OpenForms[e.Item.Name.Replace("mnu", "frm")];
                 //if (fc == null) return;
                 this.Cursor = Cursors.WaitCursor;
                 if (e.Item.Description.ToString() == "1")
@@ -281,8 +286,8 @@ namespace VS.OEE
             try
             {
                 FormCollection formCollection = Application.OpenForms;
-                List<Form> ListFormToClose = new List<Form>();
-                foreach (Form form in formCollection)
+                List<XtraForm> ListFormToClose = new List<XtraForm>();
+                foreach (XtraForm form in formCollection)
                 {
                     if (form.Name == "")
                     {
@@ -334,8 +339,8 @@ namespace VS.OEE
             if (frmDN.ShowDialog() != DialogResult.OK) return;
             
             FormCollection formCollection = Application.OpenForms;
-            List<Form> ListFormToClose = new List<Form>();
-            foreach (Form form in formCollection)
+            List<XtraForm> ListFormToClose = new List<XtraForm>();
+            foreach (XtraForm form in formCollection)
             {
                 if (form.Name != "frmMain" && form.Name != e.Item.Name.Replace("mnu", "frm"))
                 {
@@ -389,7 +394,7 @@ namespace VS.OEE
         private void ShowHieuSuatTheoNam()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmTarget frm = new frmTarget();
+            frmTarget frm = new frmTarget(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -401,7 +406,7 @@ namespace VS.OEE
         private void ShowNhomMatHang()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmItemGroup frm = new frmItemGroup();
+            frmItemGroup frm = new frmItemGroup(Commons.Modules.iPermission);
             frm.MdiParent = this;
             frm.Show();
             this.Cursor = Cursors.Default;
@@ -412,7 +417,7 @@ namespace VS.OEE
         private void ShowMatHang()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmItemMay frm = new frmItemMay();
+            frmItemMay frm = new frmItemMay(Commons.Modules.iPermission);
             frm.MdiParent = this;
             frm.Show();
             this.Cursor = Cursors.Default;
@@ -423,7 +428,7 @@ namespace VS.OEE
         private void ShowLenhSanXuat()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmProductOrder frm = new frmProductOrder();
+            frmProductOrder frm = new frmProductOrder(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -447,7 +452,7 @@ namespace VS.OEE
         private void ShowTienDoSX()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmProductRun frm = new frmProductRun();
+            frmProductRun frm = new frmProductRun(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -456,34 +461,34 @@ namespace VS.OEE
         #endregion
 
         #region ShowThoiGianNgungMay
-        private void ShowThoiGianNgungMay()
-        {
-            this.Cursor = Cursors.WaitCursor;
-            frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
-            this.Cursor = Cursors.Default;
-        }
+        //private void ShowThoiGianNgungMay()
+        //{
+        //    this.Cursor = Cursors.WaitCursor;
+        //    frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
+        //    frm.WindowState = FormWindowState.Maximized;
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //    this.Cursor = Cursors.Default;
+        //}
         #endregion
 
         #region ShowThoiGianChayMay
-        private void ShowThoiGianChayMay()
-        {
-            this.Cursor = Cursors.WaitCursor;
-            frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
-            this.Cursor = Cursors.Default;
-        }
+        //private void ShowThoiGianChayMay()
+        //{
+        //    this.Cursor = Cursors.WaitCursor;
+        //    frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
+        //    frm.WindowState = FormWindowState.Maximized;
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //    this.Cursor = Cursors.Default;
+        //}
         #endregion
 
         #region ShowNhanVien
         private void ShowNhanVien()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmNhanVien frm = new frmNhanVien(Commons.Modules.iPermission);
+            frmQuanlynhanvien frm = new frmQuanlynhanvien(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -494,12 +499,12 @@ namespace VS.OEE
         #region ShowThoiGiamLamViec
         private void ShowThoiGiamLamViec()
         {
-            this.Cursor = Cursors.WaitCursor;
-            frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
-            frm.WindowState = FormWindowState.Maximized;
-            frm.MdiParent = this;
-            frm.Show();
-            this.Cursor = Cursors.Default;
+            //this.Cursor = Cursors.WaitCursor;
+            //frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
+            //frm.WindowState = FormWindowState.Maximized;
+            //frm.MdiParent = this;
+            //frm.Show();
+            //this.Cursor = Cursors.Default;
         }
         #endregion
 
@@ -507,7 +512,7 @@ namespace VS.OEE
         private void ShowCaLamViec()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmThongTinThietBi frm = new frmThongTinThietBi(Commons.Modules.iPermission);
+            ucOperator frm = new ucOperator(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -537,8 +542,44 @@ namespace VS.OEE
             frm.Show();
             this.Cursor = Cursors.Default;
         }
+
         #endregion
 
+        #region ShowNguyenNhanNM
+        private void ShowNguyenNhanNM()
+        {
+            this.Cursor = Cursors.WaitCursor;
+            ucDownTimeCause frm = new ucDownTimeCause(Commons.Modules.iPermission);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+            this.Cursor = Cursors.Default;
+        }
+        #endregion
+
+        #region ShowLoaiNM
+        private void ShowLoaiNM()
+        {
+            this.Cursor = Cursors.WaitCursor;
+            ucDownTimeType frm = new ucDownTimeType(Commons.Modules.iPermission);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+            this.Cursor = Cursors.Default;
+        }
+        #endregion
+
+        #region ShowThongSoVanHanh
+        private void ShowThongSoVanHanh()
+        {
+            this.Cursor = Cursors.WaitCursor;
+            frmThongSoVanHanh frm = new frmThongSoVanHanh(Commons.Modules.iPermission);
+            frm.WindowState = FormWindowState.Maximized;
+            frm.MdiParent = this;
+            frm.Show();
+            this.Cursor = Cursors.Default;
+        }
+        #endregion
         #region ShowDinhNghiaTHNM
         private void ShowDinhNghiaTHNM()
         {
@@ -565,7 +606,7 @@ namespace VS.OEE
         private void ShowBoPhanChiuPhi()
         {
             this.Cursor = Cursors.WaitCursor;
-            frmThongTinChung frm = new frmThongTinChung(Commons.Modules.iPermission);
+            frmBoPhanChiuPhi frm = new frmBoPhanChiuPhi(Commons.Modules.iPermission);
             frm.WindowState = FormWindowState.Maximized;
             frm.MdiParent = this;
             frm.Show();
@@ -631,7 +672,7 @@ namespace VS.OEE
                 {
                     FormCollection formCollection = Application.OpenForms;
                     string sform = @"N@@frmChung@@ ";
-                    foreach (Form form in formCollection)
+                    foreach (XtraForm form in formCollection)
                     {
                         //if (form.Name != "frmMain")
                         //{
