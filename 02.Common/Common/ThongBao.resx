@@ -148,10 +148,10 @@
     <value>msgKhongDuocTrong</value>
   </data>
   <data name="msgTBA" xml:space="preserve">
-    <value>Notification</value>
+    <value>Notification!</value>
   </data>
   <data name="msgTBV" xml:space="preserve">
-    <value>Thông Báo</value>
+    <value>Thông Báo!</value>
   </data>
   <data name="msgXoa" xml:space="preserve">
     <value>msgXoa</value>

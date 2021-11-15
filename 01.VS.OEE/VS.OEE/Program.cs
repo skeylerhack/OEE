@@ -9,7 +9,7 @@ namespace VS.OEE
     {
         [STAThread]
         static void Main(string[] args)
-        {
+         {
             //if (args[0].ToString() == "") return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -45,7 +45,7 @@ namespace VS.OEE
             try
             {
                 Application.Run(new frmMain());
-                //Application.Run(new ucDeviceCause(1));
+                //Application.Run(new frmDeviceCause(1));
             }
             catch (Exception ex)
             {

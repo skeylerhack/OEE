@@ -2978,7 +2978,6 @@ namespace Commons
             cbo.SearchMode = SearchMode.AutoComplete;
             tree.Columns[Value].ColumnEdit = cbo;
         }
-
         public void MReleaseObject(object obj)
         {
             try
@@ -2995,7 +2994,6 @@ namespace Commons
                 GC.Collect();
             }
         }
-
         public void AddnewRow(GridView view, bool add)
         {
             try
@@ -3513,6 +3511,38 @@ namespace Commons
             }
             catch { }
             return 1;
+        }
+
+
+
+        public string LayDuLieu(string TenFile)
+        {
+            StreamReader sr;
+            string sText;
+            sText = "";
+            try
+            {
+                sText = Application.StartupPath.ToString() + @"\" + TenFile;
+                sr = new StreamReader(sText);
+                sText = "";
+                sText = sr.ReadLine();
+                try
+                {
+                    if (sText == null)
+                        sText = "";
+                }
+                catch (Exception ex)
+                {
+                    sText = "";
+                }
+                sr.Close();
+
+              
+            }
+            catch (Exception ex)
+            {
+            }
+            return sText;
         }
     }
 }

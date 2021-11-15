@@ -244,7 +244,7 @@ namespace VS.OEE
                     XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(this.Name, "msgKhongCoDuLieuDeXoa"), btnXoa.Text);
                     return;
                 }
-                if (XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(this.Name, "msgDeleteDanhMuc"), btnXoa.Text, MessageBoxButtons.YesNo) == DialogResult.No) return;
+                if (XtraMessageBox.Show(Commons.Modules.ObjLanguages.GetLanguage(this.Name, "msgDeleteDanhMuc"), Commons.Modules.ObjLanguages.GetLanguage("frmChung", "sThongBao"), MessageBoxButtons.YesNo) == DialogResult.No) return;
                 #region Xoa
                 System.Data.SqlClient.SqlConnection conn;
                 conn = new System.Data.SqlClient.SqlConnection(Commons.IConnections.CNStr);
@@ -365,6 +365,11 @@ namespace VS.OEE
             //    }
             //    catch { }
             //}
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            grvChung_DoubleClick(null, null);
         }
     }
 }
